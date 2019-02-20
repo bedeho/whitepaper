@@ -4,7 +4,7 @@ See `paper.pdf` in repo, or click this [LINK](https://github.com/Joystream/white
 
 ## Build
 
-`pdflatex paper.tex`
+`pdflatex paper.tex && bibtex paper.aux && pdflatex paper.tex && pdflatex paper.tex`
 
 ## View
 
