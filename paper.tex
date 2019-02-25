@@ -246,7 +246,7 @@ The blockchain has a consensus algorithm in the classical BFT algorithm family, 
 
     % TODO: Add more here on _why_ that is, and what the tradeoff is.
 
-    \item[-] \textbf{Light client friendly:} The overwhelming majority of end users will need to securely access the platform in computing environments with resource cosntraints, such as browsers and mobile devices. They also should be able to quickly start interacting with the platform, even if the last sign-on was a long time ago, or it may even be the first time. In addition, the Joystream protocol will have a large state and transaction history. These constraints make a light client protocol the only genuine interaction model for almost all users.
+    \item[-] \textbf{Light client friendly:} The overwhelming majority of end users will need to securely access the platform in computing environments with resource constraints, such as browsers and mobile devices. They also should be able to quickly start interacting with the platform, even if the last sign-on was a long time ago, or it may even be the first time. In addition, the Joystream protocol will have a large state and transaction history. These constraints make a light client protocol the only genuine interaction model for almost all users.
 
     In these algorithms, a light client only needs to track any potential changes in the validator set, which in practice will change quite infrequently, for example due to the unbonding period induced delay, and not in large increments. Once an up to date validator set is identified, the client can securely read any part of the platform state by authenticating merkle proofs from full nodes against state commitments found in the relevant block header.
 
