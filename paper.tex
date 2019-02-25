@@ -1281,6 +1281,14 @@ Once a campaign has been submitted, it lives in pool of campaigns for the given 
 
 \subsection{Delivery}
 
+% TODO: Note: the delivery can be interleaved on the distributor node side
+% without need for a good actor client; all that is required is:
+% a) for the (encrypted) stream to be chunked with some chunk boundaries
+%    aligned with the video frames at which ads are to be inserted,
+% b) a distributor-readable file describing such ad insertion points, and
+% c) some mechamism by which the distributor can resolve which ad to insert
+%    based on the downloader ID.
+
 A given advertising surface has a display policy which prescribes when an end user should repopulate an interface (new) content. The following informal describes the steps involved in this process, involving a user, advertising authority and advertising server.
 
 \begin{itemize}
