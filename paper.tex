@@ -329,7 +329,7 @@ Secondly, this approach explicitly subjects the fee model to a dynamic governanc
 
 \subsubsection{BRAQ} \label{sec:BRAQ}
 
-In the BRAQ model, two parameters are required for each action, the \textit{range length}, denoted by $R$, and the \textit{action quota}, denoted by $Q$, both being positive integers. A combined range length and transaction limit is called a \textit{BRAQ quota}. The model prevents an action in a given block if there are already $L$ such actions in the current to $R$ blocks back. The system must maintain a sequence of positive integers $H=(h_1, \ldots, h_N)$, called the \textit{event list}, for each action. Initially set to an empty list. A combined BRAQ quota and such list is called \textit{BRAQ instance}.
+In the BRAQ model, two parameters are required for each action, the \textit{range length}, denoted by $R$, and the \textit{action quota}, denoted by $Q$, both being positive integers. A combined range length and transaction limit is called a \textit{BRAQ quota}. The model prevents an action in a given block if there are already $L$ such actions in the current to $R$ blocks back. The system must maintain a sequence of positive integers $H=(h_1, \ldots, h_N)$, called the \textit{event list}, for each action, initially set to an empty list. A combined BRAQ quota and such list is called \textit{BRAQ instance}.
 An action should not be allowed in block height $h$ when
 
 $$ L \leq | \{ h_i \mid h_i \geq h-R\mbox{ for some } i=1,\ldots,N\} |$$ % check for off-by-one errors!
