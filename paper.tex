@@ -915,7 +915,7 @@ If either fails, the judgment will be set to rejected for the given reason. If a
 The liason must accept incoming replication attempts from all other providers which have a storage relationship with the given record. As they receive the payload, each has a responsibility to alter the readyness of their storage relationship. Any relationship which is still not ready after some defined period of time from the record being added is considered a failure. At this point the lead must inspect any possible reported errors and adjudicate.
 
 \item
-When the time limit for replication by all storage providers has been exceeded, the lead create distribution relationships for the record, based on local policy.
+When the time limit for replication by all storage providers has been exceeded, the lead creates distribution relationships for the record, based on local policy.
 
 \item
 The distributors corresponding to the new relationships can connect to the storage providers which have corresponding storage relationships with ready status to acquire a copy of the payload.
