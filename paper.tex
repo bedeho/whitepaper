@@ -951,7 +951,7 @@ If so, then a session is added to the session registry, which is in the started 
 The downloader connects to a host corresponding to the assigned distributor, and authenticates, and finally provides a verifiable reference to the new session.
 
 \item
-The distributor sends verifiable (based on Authority Key) data chunks, in response to requests from the downloader, in a tit-for-tat exchange. The member sends a signature over the claim that a certain total amount of data has been transmitted over the lifetime of the session, analogous to payment channels \cite{payment_channels}. To avoid latency there should be some amount of pipelinining.
+The distributor sends verifiable (based on Authority Key) data chunks, in response to requests from the downloader, in a tit-for-tat exchange. The downloader sends to the distributor a signature over the claim that a certain total amount of data has been transmitted over the lifetime of the session, analogous to payment channels \cite{payment_channels}. To avoid latency there should be some amount of pipelinining.
 
 \item
 The exchange ends when either all data has been sent, or when the downloader terminates the exchange. At this point, the distributor will submit a new transaction with the most recent signed consumption statement from the downloader. This transaction will settle both the actual consumed data in the session and the state of the session.
