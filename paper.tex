@@ -165,25 +165,25 @@ Joystream: A Protocol for User Governed Content Platforms
 %
 \begin{abstract}
 
-The Joystream protocol attempts to formalize a  content platform which is governed and operated by the platform users. The centerpiece of the protocol is the shared platform state, implemented on top of a blockchain consensus system, which coordinates and incentives all stakeholders. Almost every aspect of a content platform is endogenous to the protocol, including
+The Joystream protocol attempts to formalize a content platform that is governed and operated by the platform users. The centerpiece of the protocol is the shared platform state, implemented on top of a blockchain consensus system, which coordinates and provides incentives to all stakeholders. Almost every aspect of a content platform is endogenous to the protocol, including
 
     \begin{itemize}
         \item[(a)] {governance}
         \item[(b)] {membership system, with screening and policing}
         \item[(c)] {storage and distribution}
         \item[(d)] {curated content directory}
-        \item[(e)] {content search, browsing and recommendations}
+        \item[(e)] {content search, browsing, and recommendations}
         \item[(f)] {software development finance and coordination}
         \item[(g)] {content production financing}
         \item[(h)] {advertising auctions and placement}
         \item[(i)] {communication: messaging and message boards}
     \end{itemize}
 
-and every subsystem is fully accountable to, and directed by, the users, as represented by the governance process. Capturing such a broad range of systems in the protocol is \textit{the} distinguishing characteristic of this proposal. It is motivated by the thesis that a high level of platform accountability may be achieved by empowering two user capabilities.
+and every subsystem is fully accountable to, and directed by, the users, as represented by the governance system. Capturing such a broad range of systems in the protocol is \textit{the} distinguishing characteristic of this proposal. It is motivated by the thesis that a high level of platform accountability can be achieved by empowering two user capabilities.
 
-Firstly, the ability to voice discontent, and subsequently implement changes based on such voices. This relies on an immutable history of actions, reliable information sharing, and binding execution of policy changes.
+First, the ability to voice discontent and subsequently implement changes based on such voices, which relies on an immutable history of actions, reliable information sharing, and binding execution of policy changes.
 
-Secondly, the ability to exit the platform at low cost, and create an alternative, when platform decay has gone too far. This relies upon having the entire platform state available for whole sale replication, which is not possible if critical parts of the platform state are exogenous to the protocol.
+Second, the ability to exit the platform at a low cost and create an alternative when the platform decay has gone too far. This relies on having the entire platform state available for wholesale replication, which is not possible if critical parts of the platform state are exogenous to the protocol.
 
 \end{abstract}
 
@@ -195,62 +195,62 @@ Secondly, the ability to exit the platform at low cost, and create an alternativ
 
 \section{Preface}
 
-The goal of this document is to give a high level overview of design approach for of a new protocol for content platforms. This is an evolving document which is meant as a basis for a iterative review, technical specification and testing, and revised versions will be developed on the basis of that process. Multiple aspects of the protocol are still subject to active research, and any part of the current design may be amended or entirely abandoned as a result of subsequent considerations. Lastly, the descriptive resolution varies substantial across the proposal as a result of different parts being at radically different levels of maturity.
+This document aims to give a high level overview of the design approach for of a new protocol for content platforms. This is an evolving document meant as a basis for an iterative review, technical specification and testing, and revised versions will be developed on the basis of that process. Multiple aspects of the protocol are still subject to active research, and any part of the current design may be amended or entirely abandoned as a result of subsequent considerations. Lastly, the descriptive resolution varies substantially across the proposal as a result of different parts at radically different levels of maturity.
 
 \section{Introduction}
 
 \subsection{Motivation}
 
-Due to a mixture of conspiring factors, such as platform externalities, economies of scale and jurisdictional arbitrage, dominant contemporary internet platforms have become some of the least accountable organizations we have. The traditionally constraining institutions of market competition, regulation and litigation, appear simultaneously unable to push back against their market power. The social cost of this equilibrium is multifaceted, leading to lower innovation, platform rents, and more broadly that platform policy is only incidentally, not primarily, guided by the objectives of the largest platform stakeholder: \textit{users}. Users should be broadly understood to mean anyone who participates on a platform in any capacity.
+Due to a mixture of conspiring factors, such as platform externalities, economies of scale and, jurisdictional arbitrage, dominant contemporary Internet platforms have become some of the least accountable organizations today. The traditionally constraining institutions of market competition, regulation and litigation simultaneously appear to be unable to push back against their market power. The social cost of this equilibrium is multifaceted, leading to lower innovation, platform rents, and more broadly to the fact that platform policy is only incidentally, not primarily, guided by the objectives of the largest platform stakeholder: \textit{users}. Users should be broadly understood as anyone who is participating on a platform in any capacity.
 
 \subsection{Joystream}
 
-The Joystream protocol is an attempt at formalizing the structure and function of a content platform where user accountability is a key objective and organizing principle. This accountability is generated by technically codifying two well known complementary responses to organizational decline \cite{hirschman1970exit}.
+The Joystream protocol is an attempt at formalizing the structure and function of a content platform, where user accountability is a key objective and organizing principle. This accountability is generated by technically codifying two well-known complementary responses to organizational decline \cite{hirschman1970exit}.
 
 \begin{itemize}
 
     \item[-] \textbf{Voice}
 
-    Users have effective means of sharing information, coordinating and reaching decisions about key collective action problems, namely how to allocate and regulate use of any shared platform asset.
+    Users have effective means of sharing information, coordinating, and reaching decisions about key collective action problems, namely how to allocate and regulate the use of any shared platform asset.
 
     \item[-] \textbf{Exit}
 
-    Users have effective means of creating new platform instances which preserve the entire platform history and state. This ability to fully replicate the technical, administrative and economic state of a platform has two positive effects on accountability. Firstly, it empowers the voice of users through the threat of a low cost exist. Secondly, it supports the emergence of a diversity of platforms when the underlying interests of stakeholders are irreconcilably incompatible, or where organizational decline as gone sufficiently far.
+    Users have effective means of creating new platform instances that can preserve the entire platform history and state. This ability to fully replicate the technical, administrative, and economic state of a platform has two positive effects on accountability: first, it empowers the voice of users through the threat of a low cost exist; and second, it supports the emergence of a diversity of platforms when the underlying interests of stakeholders are irreconcilably incompatible or where the organizational decline as gone sufficiently far.
 
 \end{itemize}
 
-In order to build in the capacity for such responses, the Joystream protocol is built as follows. Shared platform state lives on an open blockchain consensus system. As a result, it has a public state and history, and which is fully auditable and immutable. The protocol also has secure direct and broadcast communication capabilities integrated with a platform identity system. This means that it is very cheap for any participant to securely inspect the system, and make irrefutable positive claims as part of subsequent public deliberation, learning, debate or agitation. The identity system, along with an immutable history of public actions and communications, generates the incentive to invest in community standing and act with a long time horizon. Further, there is a governance mechanism which allows low cost coordination around how shared assets should be used and regulated, and how the protocol itself should be amended. Importantly this mechanism is self-executing, and thus provides reliable and counterparty free implementation of governance decisions. All of these properties work in concert to support \textit{voice} as response.
+In order to build in the capacity for such responses, the Joystream protocol is built as follows. The shared platform state lives on an open blockchain consensus system. As a result, it has a public state and history that is fully auditable and immutable. The protocol also has secure direct and broadcast communication capabilities integrated within a platform identity system. This means that it is very cheap for any participant to securely inspect the system and make irrefutable positive claims as part of subsequent public deliberation, learning, debating, or agitating. The identity system along with an immutable history of public actions and communications generates the incentive to invest in community standing and act with a long time horizon. Further, there is a governance mechanism that allows low cost coordination around the use and regulation of shared assets and the amendment of the protocol. Importantly this mechanism self executes and thus provides reliable and a counterparty-free implementation of governance decisions. All these properties work in hand to support \textit{voice} as response.
 
-The protocol itself is open, is implemented in open source reference software, has open shared state and data accessible for all. This makes the copying step of creating an alternative instantiation trivial, and thus supports \textit{exit} as response.
+The protocol itself is open and implemented in open source reference software. It has an open shared state and data accessible for all. This makes the copying step of creating an alternative instantiation trivial and thus supports \textit{exit} as response.
 
 \section{Notes}
 
-Occasionally there may be reference to data types in various schemas or concept definitions, assume the C++ type system.
+Occasionally, there may be reference to data types in various schemes or concept definitions, assume the C++ type system.
 
-When identifier fields are used in definitions, assume that they are unique, and that the are created by auto-incrementation in the context of some set of existing instances.
+When identifier fields are used in definitions, assume that they are unique and created by auto-incrementation in the context of some set of existing instances.
 
-Constant values are displayed with capitalized snake case as follows: {\tiny FOO\_BAR}. These are values which cannot be changed through governance, and require a hard fork or consensus upgrade. On some occasions the symbol {\tiny C} will be used to denote some constant which is specific to the context.
+Constant values are displayed with a capitalized snake case as follows: {\tiny FOO\_BAR}. These are values that cannot be changed through governance and require a hard fork or consensus upgrade. In some occasions, the symbol {\tiny C} is used to denote some constant that is specific to the context.
 
 \section{Blockchain}
 
 The Joystream protocol is stateful, and the infrastructure for the secure distribution and updating of this state is a blockchain system.
-A given instantiation of the Joystream protocol runs on its own single purpose blockchain infrastructure, which only processes transactions related to this instantiation. In the rest of the document this blockchain will be treated as a silent transaction ordering mechanism, but in what follows it is briefly described what assumptions are made about the blockchain infrastructure in the protocol design. Here, and in the rest of the document, the \textit{platform or platform state} will refer to the state upon which transactions operate. In Bitcoin, this would for example be the UTXO set. This would be as distinct from the state of the underlying blockchain infrastructure itself, namely the actual chain of blocks designated by the chain selection rule.
+A given instantiation of the Joystream protocol runs on its own single-purpose blockchain infrastructure, which only processes transactions related to this instantiation. In the rest of the document, this blockchain will be treated as a silent transaction ordering mechanism; however, in the following section, it will briefly describe the assumptions on the blockchain infrastructure in the protocol design. Here, and in the rest of the document, the \textit{platform or platform state} will refer to the state upon which transactions operate. In Bitcoin, for example, this would be the UTXO set and be distinctive from the state of the underlying blockchain infrastructure itself, namely the actual chain of blocks designated by the chain selection rule.
 
 \subsection{Consensus}
 
-The blockchain has a consensus algorithm in the classical BFT algorithm family, adapted to use Proof-of-Stake based voting power for a dynamic validator\footnote{We will refer to a block producing actor as a \textit{validator}, and anyone simply fully validating the chain as a \textit{full validator}.} set. A designated platform token, described further in section \ref{sec:accounts_and_tokens}, is used by the validators to stake, and it is also the unit in which they are rewarded. There is a growing set of such consensus protocols \cite{tendermint, kiayias2017ouroboros, algorand}, and the following general properties of these systems are of importance to the protocol design.
+The blockchain has a consensus algorithm in the classical BFT algorithm family that is adapted to use Proof-of-Stake-based voting power for a dynamic validator\footnote{We will refer to a block producing actor as a \textit{validator}, and anyone simply fully validating the chain a \textit{full validator}.} set. A designated platform token, described further in section \ref{sec:accounts_and_tokens}, is used by the validators to stake and is also the unit in which they are rewarded. There is a growing set of such consensus protocols \cite{tendermint, kiayias2017ouroboros, algorand}, and the following general properties of these systems are of importance to the protocol design.
 
 \begin{itemize}
 
-    \item[-] \textbf{High throughput and low latency:} In benchmarks, these algorithms have been shown to support combinations confirmation latency, transaction throughput, validator count and geographic distribution, which are substantially more attractive than that found in typical production Nakamoto consensus chains \cite{cosmos}.
+    \item[-] \textbf{High throughput and low latency:} In benchmarks, these algorithms have been shown to support combinations of confirmation latency, transaction throughput, validator count, and geographic distribution, which are substantially more attractive than that found in typical production Nakamoto consensus chains \cite{cosmos}.
 
     % TODO: Add more here on _why_ that is, and what the tradeoff is.
 
-    \item[-] \textbf{Light client friendly:} The overwhelming majority of end users will need to securely access the platform in computing environments with resource constraints, such as browsers and mobile devices. They also should be able to quickly start interacting with the platform, even if the last sign-on was a long time ago, or it may even be the first time. In addition, the Joystream protocol will have a large state and transaction history. These constraints make a light client protocol the only genuine interaction model for almost all users.
+    \item[-] \textbf{Light client friendly:} The overwhelming majority of end users will need to securely access the platform in computing environments with resource constraints, such as browsers and mobile devices. They should also be able to quickly start interacting with the platform, even if the last sign-on was a long time ago or may even be the first time. In addition, the Joystream protocol will have a large state and transaction history. These constraints make a light client protocol the only genuine interaction model for almost all users.
 
-    In these algorithms, a light client only needs to track any potential changes in the validator set, which in practice will change quite infrequently, for example due to the unbonding period induced delay, and not in large increments. Once an up to date validator set is identified, the client can securely read any part of the platform state by authenticating merkle proofs from full nodes against state commitments found in the relevant block header.
+    In these algorithms, a light client only needs to track any potential changes in the validator set, which in practice changes quite infrequently, for example, due to the unbonding period induced delay and not in large increments. Once an up-to-date validator set is identified, the client can securely read any part of the platform state by authenticating merkle proofs from full nodes against state commitments found in the relevant block header.
 
-    Contrast this with Nakamoto consenus systems, where all block headers starting at genesis\footnote{For reference, Ethereum has a chain of more than 7.1M blocks as of Jan. 22 2019.} must initially be downloaded, and one must keep up with new blocks as the system moves forward\footnote{For reference, Ethereum commits 5760 new blocks per day as of Jan. 22 2019.}. Headers are validated and the chain selection rule is applied on a continuous basis. Even if feasible, this requires a long initial synchronization period whenever a client comes on line for the first time, or at some point after a hiatus.
+    This is in contrast to Nakamoto consenus systems where all block headers starting at genesis\footnote{For reference, Ethereum has a chain of more than 7.1M blocks as of Jan. 22 2019.} must initially be downloaded, and one must keep up with new blocks as the system moves forward\footnote{For reference, Ethereum commits 5760 new blocks per day as of Jan. 22 2019.}. Headers are validated, and the chain selection rule is applied on a continuous basis. Even if feasible, this requires a long initial synchronization period whenever a client comes on line for the first time or at some point after a hiatus.
 
     % TODO: Add more here on _why_, explanation is scattered across the following in Tendermint ecosystem, but not well explained _at all_
     %
@@ -262,17 +262,17 @@ The blockchain has a consensus algorithm in the classical BFT algorithm family, 
     % apparently the code
     % https://github.com/tendermint/tendermint/blob/master/lite/dynamic_verifier.go
 
-    \item[-] \textbf{Finality:} The finality of block commitment is the property that once two-thirds of the current validator set has signed off on a block, then that block will become, and remain, part of the chain permanently. Contrast this with Nakamoto consenus systems  where the heaviest chain selection rule can in principle fork off any block, albeit with exponentially declining probability in the block depth, from the chain. This property has a number of critical benefits
+    \item[-] \textbf{Finality:} The finality of block commitment is the property that once two-thirds of the current validator set has signed off on a block, then that block will become, and remain, part of the chain permanently. This is in contrast to Nakamoto consenus systems where the heaviest chain selection rule can in principle fork off any block, albeit with exponentially declining probability in the block depth, from the chain. This property has a number of critical benefits
 
     \begin{itemize}
 
         \item \textit{Easy interoperability}
 
-        In order for secure assertions about the state of the Joystream chain, to be feasible on a different chain, it will effectively need to behave as a light client that can track the most up to date committed block on the Joystream chain. Finality ensures that tracking this becomes very easy, because there are no reorganization events that can occur. Such events open up the possibility of attacking whatever asset ownership, or general state management, changes executed on the remote chain prior to the reorganization. Dealing with this is complex, and will often involve introducing delays. Moreover, the light client friendliness discussed above also helps in reducing how much information must be submitted to the remote chain light client.
+        In order for secure assertions about the state of the Joystream chain to be feasible on a different chain, this chain will effectively need to behave as a light client that can track the most up-to-date committed block on the Joystream chain. Finality ensures that tracking this becomes very easy, as there are no reorganization events that can occur. Such events open up the possibility of reverting the basis critical state changes executed on the remote chain prior to the reorganization, e.g. changes in asset ownership. Dealing with this is complex and will often involve introducing delays. Moreover, the light client friendliness discussed above also helps in reducing the information to be submitted to the remote chain light client.
 
         \item \textit{Safe launch and coexistence}
 
-        Finality ensures that the incentive to attack a chain in order to perform a double spend through a reorganization goes away. This risk is particularly high in the early stage of the lifetime of a new blockchain, as the amount of work (or stake) initially drawn to the system may be particularly low. Even beyond the launch, the amount of value securing the system will always fluctuate, in particular for nascent systems, and thus finality provides a valuable guarantee.
+        Finality ensures that the incentive to attack a chain to perform a double spend through a reorganization goes away. This risk is particularly high in the early stage of the lifetime of a new blockchain, as the initial amount of work (or stake) on the system may be particularly low. Even beyond the launch, the amount of value securing the system will always fluctuate, in particular for nascent systems;  thus, finality provides a valuable guarantee.
 
         \item \textit{Better usability}
 
@@ -284,24 +284,24 @@ The blockchain has a consensus algorithm in the classical BFT algorithm family, 
 
 \subsection{Upgrading}
 
-It is possible to upgrade both the transaction validation rules, and the current state of the chain, through the transaction processing system itself. This is typically enabled by having the transaction validation rules be stored in the state, and run them on top of some virtualization layer. This property is a requirement for the following:
+It is possible to upgrade both the transaction validation rules and the current state of the chain through the transaction processing system itself. This can typically be enabled by storing the transaction validation rules in the state and then running them on top of some virtualization layer. This property is a requirement for the following:
 
 \begin{itemize}
 
-    \item[-] \textbf{Genuine accountability:} Without a formalized mechanism for both measuring the preferences of stakeholders on collective action decisions, and exercising those decisions, there will be an inevitable development of off-chain social conventions and authorities which operate as stuarts and coordinators in such scenarios. Such actors are not accountable to platform stakeholders in any well defined or transparent way, which is undesirable in of itself.
+    \item[-] \textbf{Genuine accountability:} Without a formalized mechanism for both measuring the preferences of stakeholders on collective action decisions and exercising those decisions, there will be an inevitable development of off-chain social conventions and authorities who will operate as stuarts and coordinators in such scenarios. Such actors are not accountable to platform stakeholders in any well defined or transparent way, which is undesirable in itself.
 
-    \item[-] \textbf{Faster iteration:} For the protocol rules to quickly evolve, the process for coordinating around such changes must economize on critical ecosystem resources, such as attention, information processing and legitimacy. Opaque off-chain upgrading processes risk becoming a perpetual source of conflict around questions of legitimacy. Moreover, the requirement for active upgrading of validator software, and the non-committing signaling games which often surround such events, are an additional practical friction. Instead, endogenous upgrading, with an accompanying on-chain immutable record of deliberation, and an history of such updates, can offer an effective remedy against these difficulties.
+    \item[-] \textbf{Faster iteration:} For the protocol rules to quickly evolve, the process to coordinate around such changes must economize on critical ecosystem resources, such as attention, information processing, and legitimacy. Opaque off-chain upgrading processes risk becoming a perpetual source of conflict around questions of legitimacy. Moreover, the requirement for active upgrading of validator software and the non-committing signaling games that often surround such events are an additional practical friction. Instead, endogenous upgrading with an accompanying on-chain immutable record of deliberation and a history of such updates can offer an effective remedy against these difficulties.
 
-    \item[-] \textbf{Developer fungibility:} In general, a complex system, where any failure is catastrophic, will tend to constrain the number of developers who securely can contribute to the improvement of the system. This constraint can in the extreme support a kind of market power in the hands of key developers, where they can end up becoming gate keepers for any change to be applied.
+    \item[-] \textbf{Developer fungibility:} In general, a complex system where any failure is catastrophic will require constraining the number of developers who can securely contribute to the improvement of the system. This constraint can in extreme cases support a market power in the hands of key developers, where they can end up becoming gate keepers for any change to be applied.
 
-    In the context of upgrading blockchain systems, the reliance on off-chain upgrades to the consensus rules, the state transition function must incorporate the full history of rule sets from genesis, to the most recent changes, in order to be able to validate all blocks. In practice this ends up with an monotonically increasing complexity confronting developers wanting to comprehend and modify the system, which is problematic, as explained.
+    In the context of upgrading blockchain systems, the reliance on off-chain upgrades to the consensus rules, the state transition function must incorporate the full history of rule sets from genesis to the most recent changes to validate all blocks. In practice, this ends up with a monotonically increasing complexity confronting developers wanting to comprehend and modify the system, which is problematic, as explained.
 
 \end{itemize}
 
 \subsection{Asynchronous Transaction Processing}
 \label{sec:asynchronous_transaction_processing}
 
-Certain kinds of transactions may occasionally be required which take a long time to process. Specifically, they may even require more time to process than what is feasible when consuming all the the block time across multiple blocks. In some cases it may be possible to accommodate such processing by the following approach, referred to as Asynchronous Transaction Processing (ATP). When the transaction is processed, and is valid, an appropriate subset of the blockchain state is locked, in the sense that all other transaction types which mutate it are considered invalid. In order to implement this in an orderly fashion, where it is practical to reason about what transactions are impacted by a given subset, one should confine the approach to suitable transaction types. Now during this locking period, which typically will last for a predefined number of blocks, the validator nodes are free to conduct the desired processing for the initial transaction outside of the normal sequential validation of blocks, for example on a separate processing unit. The locking prevents any race condition. Finally, when the time has expired, the finalized processing result is committed to the blockchain state at the end of the corresponding block, and the substate locking is no longer in effect.
+Certain types of transactions that may take a long time to process are occasionally required. Specifically, they may even require more time to process more than what is feasible when consuming all the the block times across multiple blocks. In some cases, it may be possible to accommodate such processing by the following approach, referred to as Asynchronous Transaction Processing (ATP). When the transaction is processed, and is valid, an appropriate subset of the blockchain state is locked in the sense that all other transaction types that mutate it are considered invalid. In order to implement this in an orderly fashion, where it is practical to reason about what transactions are impacted by a given subset, one should confine the approach to suitable transaction types. Now, during this locking period, which typically will last for a predefined number of blocks, the validator nodes are free to conduct the desired processing for the initial transaction outside the normal sequential validation of blocks, for example, on a separate processing unit. The locking prevents any race condition. Finally, when the time has expired, the finalized processing result is committed to the blockchain state at the end of the corresponding block, and the substate locking is no longer in effect.
 
 % TODO: Add figure showing chain of blocks, substate being locked, async prcoessing, and final commitment of result in state.
 
@@ -315,38 +315,38 @@ There are two types of fee model modes available in the protocol.
 
 \begin{itemize}
 
-    \item[-] \textbf{Transactional:}  The normal transactional pay per use model found in the majority of currency focused systems, such as Bitcoin. This mode applies to basic operations, such as moving fund.
+    \item[-] \textbf{Transactional:}  The normal transactional pay-per-use model can be found in a majority of currency-focused systems such as Bitcoin. This mode applies to basic operations such as moving fund.
 
-    \item[-] \textbf{Block Range Action Quota (BRAQ):} An \textit{action} refers to a combination of an actor, role and transaction type. This model prevents a given action from occurring more than a given number of time over a given number of blocks. Successfully issuing such transactions within the given limits do not involve marginal outlay for the given actor.
+    \item[-] \textbf{Block Range Action Quota (BRAQ):} An \textit{action} refers to a combination of an actor, role, and transaction type. This model prevents a given action from occurring more than a given number of time over a given number of blocks. Successfully issuing such transactions within the given limits does not involve marginal outlay for the given actor.
 
 \end{itemize}
 
-Given that BRAQ will cover the majority of transactions, security would be primarily be financed through minting tokens, which also more closely matches the public goods nature of chain security. This dual model has a number of critical benefits for platform.
+Given that BRAQ will cover the majority of transactions, security will primarily be financed through minting tokens, which also more closely matches the public goods nature of chain security. This dual model has a number of critical benefits for platform.
 
-Firstly, it dramatically reduces the transactions costs of onboarding new users who initially have no tokens and either face prohibitive costs in acquiring, storing and using them, or need to be persuaded about the value of the platform before being willing to incur such costs. Such users will instead face the option of being onboarded via a screening mechanism (see section \ref{sec:membership_curation}). After this they will be able to immediately interact with the system, within constraints. Users may later earn or purchase tokens in order to escape quota limitations. Alternatively, the platform itself may simply eventually abandon the free policy once these costs have declined sufficiently, as a result of general increase in maturity of the blockchain ecosystem.
+First, it drastically reduces the transactions costs of onboarding new users who initially have no tokens and either face prohibitive costs in acquiring, storing, and using them or need to be persuaded about the value of the platform before being willing to incur such costs. Such users will instead face the option of being onboarded via a screening mechanism (see section \ref{sec:membership_curation}). After this, they will be able to immediately interact with the system, within constraints. Users may later earn or purchase tokens to escape quota limitations. Alternatively, the platform itself may simply eventually abandon the free policy once these costs have declined sufficiently as a result of general increase in maturity of the blockchain ecosystem.
 
-Secondly, this approach explicitly subjects the fee model to a dynamic governance process, where all default limits, and individual member quotas, can be adjusted. This is an easy, and possible the only feasible, long term mechanism for correcting the externalities associated with long term social cost of transaction processing and state utilization in public chains \cite{blockchain_resource_pricing}.
+Second, this approach explicitly subjects the fee model to a dynamic governance process where all default limits and individual member quotas can be adjusted. This is an easy and possibly the only feasible long term mechanism for correcting the externalities associated with the long-term social cost of transaction processing and state utilization in public chains \cite{blockchain_resource_pricing}.
 
 \subsubsection{BRAQ} \label{sec:BRAQ}
 
-In the BRAQ model, two parameters are required for each action, the \textit{range length}, denoted by $R$, and the \textit{action quota}, denoted by $Q$, both being positive integers. A combined range length and transaction limit is called a \textit{BRAQ quota}. The model prevents an action in a given block if there are already $L$ such actions in the current to $R$ blocks back. The system must maintain a sequence of positive integers $H=(h_1, \ldots, h_N)$, called the \textit{event list}, for each action, initially set to an empty list. A combined BRAQ quota and such list is called \textit{BRAQ instance}.
+In the BRAQ model, two parameters are required for each action: the \textit{range length}, denoted by $R$, and the \textit{action quota}, denoted by $Q$; both are positive integers. A combined range length and transaction limit is known as a \textit{BRAQ quota}. This model prevents an action in a given block if there are already $L$ such actions in the current $R$ blocks prior. The system must maintain a sequence of positive integers $H=(h_1, \ldots, h_N)$, known as the \textit{event list}, for each action, initially set to an empty list. A combination of BRAQ quota and such a list is referred to as \textit{BRAQ instance}.
 An action should not be allowed in block height $h$ when
 
 $$ L \leq | \{ h_i \mid h_i \geq h-R\mbox{ for some } i=1,\ldots,N\} |$$ % check for off-by-one errors!
 
-otherwise it should proceed to normal validation. If the corresponding transaction is subsequently found to be accepted, the new value for $H$ should be
+otherwise it will proceed to normal validation. If the corresponding transaction is subsequently found to be accepted, then the new value for $H$ should be
 
 $$ (h, h_1, \ldots, h_{M}) $$
 
-where $M=N$ if $N < L$, otherwise $M = N - 1$. Hence $H$ is a list of block heights for, up to, the last $N$ successful actions. The benefit of the event list is that it makes it easy for a light client to track availability of a given action at any given time, as the entire BRAQ instance is securely available in the state. A full node could in principle track and enforce an instance without having the $H$ in the state.
+where $M=N$ if $N < L$, otherwise $M = N - 1$. Hence, $H$ is a list of block heights for, up to, the last $N$ successful actions. The benefit of the event list is that it makes it easy for a light client to track the availability of a given action at any given time, as the entire BRAQ instance is securely available in the state. A full node could in principle track and enforce an instance without having the $H$ in the state.
 
-Lastly, when using this model, it may in some cases be desirable to share the same quota across a range of instances. This is typically if you are dealing with a very large number of instances which all have very similar actors. At the same time, it can also be ideal to retain the flexibility to have explicitly custom quotas for specific actors, based on policy or discretion. These two goals are accommodated by the concept of a \textit{BRAQ quota proxy}. This is either a normal quota, or it is an identifier resolving a normal quota in some context specific pool of quotas, or simply a sentinel to use some other context specific quota.
+Lastly, when using this model, it is in some cases desirable to share the same quota across a range of instances. This is typically if you are dealing with a very large number of instances all of which have very similar actors. At the same time, it is also ideal to retain the flexibility to have explicitly custom quotas for specific actors based on policy or discretion. These two goals are accommodated by the concept of a \textit{BRAQ quota proxy}. This is either a normal quota or an identifier resolving a normal quota in some context-specific pool of quotas or simply a sentinel to use some other context specific quota.
 
 \subsection{Interoperability}
 
-Some of the assets that are of value to the platform will inevitably not live in the state of the same blockchain. This could for example be state of a DNS mapping which lives on some other system, like ENS \cite{ens} or Handshake \cite{handshake}. It may even be desirable to move certain  assets from the Joystream blockchain, such as tokens, over onto other blockchain systems. While proposals are being developed to support very general inter blockchain transaction routinely, such as Cosmos \cite{cosmos} for tokens and Polkadot \cite{polkadot}, its not clear when or if they will be fully deployed, and to what extent the Joystream blockchain will be able to benefit, or more simply whether the Joystream governance process will converge on such an integration.
+Some of the assets that are of value to the platform will inevitably not live in the state of the same blockchain. This can, for example, be the state of a DNS mapping that lives on some other system, such as ENS \cite{ens} or Handshake \cite{handshake}. It may even be desirable to move certain assets from the Joystream blockchain, such as tokens, onto other blockchain systems. While proposals are being developed to support very general inter-blockchain transaction routinely, such as Cosmos \cite{cosmos} for tokens and Polkadot \cite{polkadot}, it is not clear when or if they will be fully deployed, and to what extent the Joystream blockchain will be able to benefit, or more simply whether the Joystream governance process will converge on such an integration.
 
-A direct and simple case by case integration will be possible by using the same standard technique used in almost all secure blockchain integration proposals. For each blockchain which needs to be integrated with Joystream, deploy a light client instance on each side, for the opposite side, where there is a requirement to write to the state on of the first. This obviously requires that the given side is expressive and economical enough to support such an on-chain light client. So for example, take the case of wanting to subject an ENS mapping, on Ethereum, to the governance processes on the Joystream blockchain. This would only require deploying a Joystream light client contract on Ethereum which also is set as the owner to the given mapping. Block headers comitted to the Joystream blockchain would have to be submitted to this light client, at the very least when there were changes in validator sets. A designated party from the Joystream side could be incentivised to regularly do this. This header history in the state of the contract would allow it to be securely convinced of the ENS related signaling actions on the Joystream side through Merkle proofs, since these would be committed to in the corresponding headers\footnote{This could be in the event logging system, or individual transaction types being included in blocks.}. The contract could then in turn execute the corresponding on chain contract call to put this signal into effect in ENS.
+A direct and simple case-by-case integration will be possible by using the same standard technique in almost all secure blockchain integration proposals. For each blockchain that needs to be integrated with Joystream, deploy a light client instance on each side, for the opposite side, where there is a requirement to write to the state on the first. This obviously requires that the given side is expressive and economical enough to support such an on-chain light client. Take the example of wanting to subject an ENS mapping, on Ethereum, to the governance processes on the Joystream blockchain. This will only require deploying a Joystream light client contract on Ethereum, which also is set as the owner to the given mapping. Block headers committed to the Joystream blockchain will then have to be submitted to this light client, at the very least when there are changes in validator sets. A designated party from the Joystream side can be incentivised to regularly conduct this. This header history in the state of the contract will allow it to be securely convinced of the ENS-related signaling actions on the Joystream side through Merkle proofs, since these will be committed to in the corresponding headers\footnote{This could be in the event logging system, or individual transaction types being included in blocks.}. The contract can then in turn execute the corresponding on-chain contract call to put this signal into effect in ENS.
 
 % TODO: Add illustration
 % \begin{figure}[h]
@@ -358,24 +358,24 @@ A direct and simple case by case integration will be possible by using the same 
 
 \section{Accounts and Tokens} \label{sec:accounts_and_tokens}
 
-The platform has a standard for account based (fungible) token ownership. There will be a primary token, called the \textit{native token}, which will be part of initial state of the platform. This native token will, as will be described later, be used for value transfer, bonding and governance activities.
+The platform has a standard for account-based (fungible) token ownership. There will be a primary token, called the \textit{native token}, which will be part of the initial state of the platform. This native token will, as will be described later, be used for value transfer, bonding, and governance activities.
 
-New tokens are minted continuously for a very wide range of purpose, all primarily to reward some actor for some behavior. This minting is perpetual, and how much is minted for what purpose is controlled by the platform governance process. New tokens are also burned by actors in scenarios where they need to contribute value to the platform through the token, e.g. purchasing ad placements. There is no platform treasury which would otherwise absorb these tokens. As a result of these three separate exogenous dynamics - and the platform upgradeability functionality, there is no ex-ante certainty about the total supply of the token at different points in time in the future.
+New tokens are minted continuously for a very wide range of purposes, all primarily to reward some actor for some behavior. This minting is perpetual, and how much is minted for what purpose is controlled by the platform governance process. New tokens are also burned by actors in scenarios where they need to contribute to the platform through the token; e.g. purchasing ad placements. There is no platform treasury that will otherwise absorb these tokens. As a result of these three separate exogenous dynamics - and the platform upgradeability functionality, there is no ex-ante certainty about the total supply of the token at different points in time in the future.
 
-The other tokens are related to the content finance market, described further in section \ref{sec:content_finance}. They are issued by publishing a \textit{token profile} into a registry, called the \textit{token registry}. A token profile includes include key information, such as a standard token symbol, issuer identifier, description and also the ownership state itself, called the \textit{token balances}. The token balances simply maps a public key to a positive integer, and a single mapping represents the quantity of tokens under the control of whomever holds the private key which corresponding the public key. The registration of a key in the balances of a token is referred to as an \textit{account}. Reuse of the same key pair across accounts for the same actor is an individual policy choice. Normal spending operations can be conducted from an account to any new, or existing, account on the same token, by being able to sign a message with a private key that matches the public key corresponding to the origin account. The token registry is a mapping from a \textit{token identifier}, which is a unique positive integer, to the corresponding token profile. The native token has identifier $0$.
+The other tokens are related to the content finance market, described further in section \ref{sec:content_finance}. They are issued by publishing a \textit{token profile} into a registry called the \textit{token registry}. A token profile includes key information, such as a standard token symbol, issuer identifier, description, and also the ownership state itself known as the \textit{token balances}. The token balances simply maps a public key to a positive integer, and a single mapping represents the quantity of tokens under the control of whoever holds the private key corresponding to the public key. The registration of a key in the balances of a token is referred to an \textit{account}. Reuse of the same key pair across accounts for the same actor is an individual policy choice. Normal spending operations can be conducted from an account to any new or existing account on the same token by signing a message with a private key that matches the public key corresponding to the original account. The token registry is a mapping from a \textit{token identifier}, which is a unique positive integer, to the corresponding token profile. The native token has identifier $0$.
 
-Notice that the following account model is distinct from the smart contract account model in general, where all transactions are tied to a given account, although such platforms also have an account based token ownership model. Transactions are instead on Joystream, at least most of the time, tied to membership, explained in further detail in section \ref{sec:member}.
+Note that the following account model is distinct from the smart contract account model in general, where all transactions are tied to a given account, although such platforms also have an account-based token ownership model. Transactions are instead on Joystream, at least most of the time, tied to membership, which has been explained in further detail in section \ref{sec:member}.
 
 \section{Member} \label{sec:member}
 
 \subsection{Overview}
 
 % Move later?
-The membership concept is meant unify all platform level participation for the same actor in a way which is independent of token ownership in the account system. This means that all platform level actions are with reference to a particular membership. A given member may of course occupy a range of different roles through the same membership, and membership is conceptually a base role in itself. Having an integrated representation of the participation of a single actor is very valuable in supporting efficient communication and collaboration, and it supports pro-social investment in actor reputation. Separating this from token holdings is valuable, as it allows for allowing some types participation to be possible without tokens, for example as a means for actors to earn their first tokens
+The membership concept is meant to unify all platform-level participation for the same actor in a way that is independent of token ownership in the account system. This means that all platform level actions are with reference to a particular membership. A given member may of course occupy a range of different roles through the same membership. Membership is conceptually a base role in itself. Having an integrated representation of the participation of a single actor is very valuable in supporting efficient communication and collaboration and supports pro-social investment in the actor's reputation. Separating this from token holdings is valuable, as it allows for some type of participation to be possible without tokens, for example, as a means for actors to earn their first tokens
 
 \subsection{Member, Profile and Registry} \label{sec:member_profile}
 
-A \textit{member} is an actor who is registered in the \textit{membership registry}, and is defined as follows \\
+A \textit{member} is an actor who is registered in the \textit{membership registry} and is defined as follows: \\
 
 \begin{concept_box}{Member}
     \begin{itemize}
@@ -386,18 +386,18 @@ A \textit{member} is an actor who is registered in the \textit{membership regist
       \item[-] \textbf{Description:} String of capped length (UTF-8).
 
       \item[-] \textbf{Added:} Date and time when the membership was first established .
-      \item[-] \textbf{Entry:} If membership was established through screening (see section \ref{sec:membership_curation}), the this is set to ID of screening authority which created membership. If it was established through payment (see section \ref{sec:paid_membership}), then this is the paid term ID of the terms. Otherwise its blank.
+      \item[-] \textbf{Entry:} If membership was established through screening (see section \ref{sec:membership_curation}), the this is set to ID of screening authority which created membership. If it was established through payment (see section \ref{sec:paid_membership}), then this is the paid term ID of the terms. Otherwise, its blank.
       \item[-] \textbf{BRAQs Instances:} Set of BRAQ instances for all base member actions (see section \ref{sec:BRAQ})
       \item[-] \textbf{Suspended:} Whether member is suspended.
-      \item[-] \textbf{Subscription:} If at least one subscription has been entered into, then this is the date and time of this, and the corresponding subscription term ID (see section \ref{sec:subscription}). Otherwise its blank.
+      \item[-] \textbf{Subscription:} If at least one subscription has been entered, then this is the date and time of that event and the corresponding subscription term ID (see section \ref{sec:subscription}). Otherwise its blank.
     \end{itemize}
 \end{concept_box}
 
-The membership registry is simply a mapping which associated the identifier (ID) of a member with the corresponding profile. Lastly, there is also a set of BRAQ quotas, called the \textit{default membership quotas}, used for all base membership BRAQ instances which have indirect proxy quotas.
+The membership registry is simply a mapping that associates the identifier (ID) of a member with the corresponding profile. Lastly, there is also a set of BRAQ quotas, called the \textit{default membership quotas}, used for all base membership BRAQ instances with indirect proxy quotas.
 
-The suspension field only impacts a members capacity to act through their base membership capacities, any actions derived from other roles is unaffected. Also, a member may be suspended even if this field is not set (see section \ref{sec:suspension}).
+The suspension field only impacts a member's capacity to act through their base membership capacities; any action derived from other roles is unaffected. Also, a member may be suspended even if this field is not set (see section \ref{sec:suspension}).
 
-A membership may be established for free, as explained in section \ref{sec:membership_curation}, or it may be paid for at a one time cost of burning a given amount of tokens. As a result of free entry, a given key may be associated with a membership, but no account. The converse is also possible by definition. Once a membership has been established, it is permanent. For a given key, there may both a corresponding account and membership, or either one exclusively. While an actor may find it practical to identify with the same key in both capacities, the system cannot, and does not, enforce this.
+A membership may be established for free, as explained in section \ref{sec:membership_curation}, or it may be paid for a one time cost of burning a given amount of tokens. As a result of free entry, a given key may be associated with a membership but no account. The converse is also possible by definition. Once a membership has been established, it is permanent. For a given key, there may both a corresponding account and membership, or either one exclusively. While an actor may find it practical to identify with the same key in both capacities, the system cannot, and does not, enforce this.
 
 % TODO: There is basic stuff missing or broken here, like how to support someone paying at a later time, and also how to deal with platform terms changing, and requiring members to accept before moving forward.
 
@@ -407,40 +407,40 @@ A membership may be established for free, as explained in section \ref{sec:membe
 
 \begin{concept_box}{Paid Membership Terms}
     \begin{itemize}
-      \item[-] \textbf{ID:} Unique integer identifier, called \textit{term ID}.
-      \item[-] \textbf{Fee:} Quantity of native token which must be provably burned.
+      \item[-] \textbf{ID:} Unique integer identifier known as \textit{term ID}.
+      \item[-] \textbf{Fee:} Quantity of native token that must be provably burned.
       \item[-] \textbf{Proxy Quota:} Initial quota for membership.
-      \item[-] \textbf{Text:} String of capped length (UTF-8) describing the human readable conditions which are being agreed upon.
+      \item[-] \textbf{Text:} String of capped length (UTF-8) describing the human readable conditions to be agreed upon.
     \end{itemize}
 \end{concept_box}
 
-The platform has a set of terms, called the \textit{active paid membership terms}, which is the terms currently in place for anyone seeking paid membership. It is updated through a council proposal. Any new terms introduced by the council must have an ID one greater than the prior active terms, and the initially active terms have an ID of $0$. The full history of all such terms that were at one time active is kept in a list, called the \textit{paid membership terms record}, which maps the term id to the corresponding terms.
+The platform has a set of terms, called the \textit{active paid membership terms}, which are currently in place for anyone seeking paid membership. It is updated through a council proposal. Any new terms introduced by the council must have an ID greater than the prior active terms; the initially active terms have an ID of $0$. The full history of such terms that were once active is kept in a list known as the \textit{paid membership terms record}, which maps the term ID to the corresponding terms.
 
-A new actor may join as a member at any time by making a request, which will burn the required fee from their account, so long as the platform is currently accepting members. This is gated by a platform variable, called the \textit{platform membership gate}, and it can be changed through a proposal.
+A new actor may join as a member at any time through a request, which will burn the required fee from their account, so long as the platform is accepting members. This is gated by a platform variable referred to as the \textit{platform membership gate} and can be changed through a proposal.
 
 \subsection{Subscription} \label{sec:subscription}
 
-\textit{Subscription terms} represent a set of conditions for a prospective subscriber on the platform, and is defined by \\
+\textit{Subscription terms} represent a set of conditions for a prospective subscriber on the platform and are defined by the following:\\
 
 \begin{concept_box}{Subscription}
     \begin{itemize}
       \item[-] \textbf{ID:} Unique integer identifier.
-      \item[-] \textbf{Fee:} Quantity of native token which must be provably burned.
+      \item[-] \textbf{Fee:} Quantity of native token that must be provably burned.
       \item[-] \textbf{Duration:} Number of blocks for which the subscription is valid.
-      \item[-] \textbf{Proxy Quota Delta:} Set of proxy quotas that will be added to the base level quotas to expand quotas.
-      \item[-] \textbf{Text:} String of capped length (UTF-8) describing the human readable conditions which are being agreed upon.
+      \item[-] \textbf{Proxy Quota Delta:} Set of proxy quotas added to the base level quotas to expand quotas.
+      \item[-] \textbf{Text:} String of capped length (UTF-8) describing the human readable conditions to be agreed upon.
     \end{itemize}
 \end{concept_box}
 
-A member which has a subscription which is \textit{active}, that is the current block height it less than the sum of the subscription entry time and duration, is called \textit{a subscriber} in this period.
+A member with a subscription that is \textit{active}, that is, the current block height is lesser than the sum of the subscription entry time and duration is referred to as \textit{a subscriber} in this period.
 
-Just as for paid membership and terms, there is an analogues concept of active terms, terms record and a gate.
+Similar to that of paid membership and terms, there is an analogues concept of active terms, terms record, and a gate.
 
-While members can establish subscriptions at any time, the time line is divided into \textit{subscription periods}. In each period, a cumulative count of the total amount of fees burned for subscriptions is maintained. At the end of each period, payouts to relevant parties, such as publishers for example, be based on these final tallies.
+While members can establish subscriptions at any time, the time line is divided into \textit{subscription periods}. In each period, a cumulative count of the total amount of fees burned for subscriptions is maintained. At the end of each period, payouts to relevant parties such as publishers, for example, are based on these final tallies.
 
 \section{Roles, Staking and Slashing} \label{sec:roles_staking_and_slashing}
 
-A \textit{role} is a membership status, of which there are a fixed number of varieties, which gives access to a range of different rights, and correspondingly confers a range of responsibilities. A given member may occupy multiple roles simultaneously.
+A \textit{role} is a membership status having a fixed number of varieties, which gives access to a range of different rights and correspondingly confers a range of responsibilities. A given member may occupy multiple roles simultaneously.
 
 \begin{comment}
 \renewcommand{\arraystretch}{2.1} % set row height
@@ -492,14 +492,14 @@ A \textit{role} is a membership status, of which there are a fixed number of var
 \end{table}
 \end{comment}
 
-An actor may be required to lock up a certain amount native tokens over some period of time, under certain conditions, and this is referred to as
-\textit{staking}. Typically this is in the context of participating in some role, or performing some action. In some roles, it is possible to raise or lower the staked balance on an ongoing basis, within context specific limits. There will often be a period of time before a change in the staked amount of tokens is counted towards the actual total staked balance. For increases this is called \textit{bonding period}, and for decreases it is called \textit{unbonding period}. If a stake reduction leads to a the actual staked balance dipping below the minimum required for a given role at that time, then a full stake balance reduction is automatically initiated, and no increases can be initiated until the unbonding period is over. Tokens that are in one of these two periods are referred to as \textit{in flight}. Tokens staked or in flight cannot be reused to stake in another context at the same time.
+An actor may be required to lock up a certain amount of native tokens for some time under certain conditions, and this is referred to as
+\textit{staking}. Typically, this is in the context of participating in some role or performing some action. In some roles, it is possible to raise or lower the staked balance on an ongoing basis within context-specific limits. There will often be a time before a change in the staked amount of tokens is counted toward the actual total staked balance. For increases, this is known as \textit{bonding period} and for decreases \textit{unbonding period}. If a stake reduction leads to the actual staked balance dipping below the minimum required for a given role at that time, then a full stake balance reduction is automatically initiated, and no increases can be initiated until the unbonding period is over. Tokens that are in one of these two periods are referred to as \textit{in flight}. Tokens staked or in flight cannot be reused to stake in another context at the same time.
 
-Under certain scenarios it may be possible for a member to lose all, or part of, their stake, and this is referred to as \textit{slashing}.
+Under certain scenarios, it may be possible for a member to lose all or a part of their stake; this is referred to as \textit{slashing}.
 
 \section{Rewards}
 
-All staking is \textit{rewarded} in tokens paid out directly to the member account, and if no account exists, the membership key will be used to credit an account with the same key. These payouts will come at the end of some corresponding time interval, and they are made up of two components. The first component, called the \textit{compensation payoff}, is of the form $xr^{T}$, where $x$ is the staked quantity, $r$ is a global nominal per block interest rate, and $T$ is the number of blocks in the given period. If the staked quantity has varied over the period, then simply let $x$ represent the average time weighted quantity. The second component, called the \textit{earned payoff}, is related to the particular activity or role that was undertaken in the given period. Hence the total reward to a given stake in a given period may be written as
+All staking is \textit{rewarded} in tokens paid out directly to the member account and, if no account exists, then the membership key will be used to credit an account with the same key. These payouts will come at the end of some corresponding time interval and are comprised of two components. The first component, known as the \textit{compensation payoff}, is of the form $xr^{T}$, where $x$ is the staked quantity, $r$ is a global nominal per block interest rate, and $T$ is the number of blocks in the given period. If the staked quantity has varied over the period, then $x$ will represent the average time weighted quantity. The second component, referred to as the \textit{earned payoff}, is related to the particular activity or role that was undertaken in the given period. Hence, the total reward to a given stake in a given period may be written as
 
 $$ \frac{\sum_i x_i\Delta_i}{T}r^T + C$$
 
@@ -511,23 +511,23 @@ where $x_i$ is the quantity staked in the $i$-th sub period, which itself lasted
 
 \subsubsection{Terms}
 
-The governance process is divided into a sequence of periods, known as \textit{terms}, and the first term is known as the \textit{bootstrap term}. Each term, with the exception of the bootstrap term, has a corresponding \textit{council}, which is a set of staked members responsible for voting over submitted \textit{proposals}. Proposals are bids to execute given operations on the platform state in order to serve some contemplated end.
+The governance process is divided into a sequence of periods known as \textit{terms}, and the first term is known as the \textit{bootstrap term}. Each term, with the exception of the bootstrap term, has a corresponding \textit{council}, which is a set of staked members responsible for voting over submitted \textit{proposals}. Proposals are bids to execute given operations on the platform state in order to serve some contemplated end.
 
 \subsubsection{Elections}
 
-The council for a given term is established through a \textit{council election}, where all members have the opportunity to place weighted backing behind prospective councilors who announce their bid for council membership, and put up their own corresponding stake. The election is conducted towards the end of a term, and current council members are expected to carry out their responsibility of dispatching proposals through their term. The number of council positions in the next term is always set to be a given number in the preceding term, called the \textit{council size}. This may be altered through a proposal, and a new number goes into effect at the start of the next term.
+The council for a given term is established through a \textit{council election}, where all members have the opportunity to place weighted backing behind prospective councilors who announce their bid for council membership and put up their own corresponding stake. The election is conducted toward the end of a term, and current council members are expected to carry out their responsibility of dispatching proposals throughout their term. The number of council positions in the next term is always set to a given number in the preceding term referred to as the \textit{council size}. This may be altered through a proposal. A new number goes into effect at the start of the next term.
 
 The election has four stages.
 
 \begin{itemize}
 
-\item[-] \textbf{Announcements Stage:} Members get to announce their candidacy for the council. They have to put up some minimal amount of stake to be able to do this, called the \textit{council staking limit}. This limit may be altered through a proposal, and the new limit goes into effect at the start of the next term. When not in the bootstrap term, there may already be existing council members, and they are also welcome to announce for the next term, which is \textit{extending candidacy}. A council member may in this case reuse their existing stake, which is called \textit{transferring council stake}. In this case, they may have to adjust their staking amount to satisfy a staking limit which may have been altered. There is an upper limit to the number of candidates which may be voted upon, called the \textit{council candidacy limit}. This limit may be altered through a proposal, and the new limit goes into effect at the start of the next term. If there are more candidates satisfying the staking limit than this limit, then candidates are ranked based on staked amount. The set of candidates who actually end up being eligible after this constraint is applied is called \textit{candidate pool}.
+\item[-] \textbf{Announcements stage:} Members get to announce their candidacy for the council. They need to put a minimal amount of stake to be able to do this, which is known as the \textit{council staking limit}. This limit may be altered through a proposal, and the new limit may come into effect at the start of the next term. When not in the bootstrap term, there may already be existing council members who are also welcome to announce for the next term, which denotes \textit{extending candidacy}. A council member may in this case reuse their existing stake, which is referred to as \textit{transferring council stake}. In this case, they may have to adjust their staking amount to satisfy a staking limit that may have been altered. There is an upper limit to the number of candidates that may be voted upon and is termed the \textit{council candidacy limit}. This limit may be altered through a proposal, and the new limit may come into effect at the start of the next term. If there are more candidates satisfying the staking limit than this limit, then candidates are ranked based on the staked amount. The set of candidates who actually end up being eligible after this constraint is applied and termed \textit{candidate pool}.
 
-\item[-] \textbf{Voting Stage:} All members - including current and prospective council members, \textit{back} candidates for the next term. Backing refers to staking in support of the candidacy of a member in the candidate pool. Each backing is a sealed commitment to a particular candidate, where the seal is simply salted hashing of the candidate identifier. A member may reuse tokens already staked behind an existing council member, to a member of the candidate pool, which is called \textit{transferring backing stake}.
+\item[-] \textbf{Voting stage:} All members, including current and prospective council members, \textit{back} candidates for the next term. Backing refers to staking in support of the candidacy of a member in the candidate pool. Each backing is a sealed commitment to a particular candidate, where the seal is simply salted hashing the candidate identifier. A member may reuse tokens already staked behind an existing council member to a member of the candidate pool, which is referred to as \textit{transferring backing stake}.
 
-\item[-] \textbf{Reveal Stage:} All members who backed candidates must submit their salts to \textit{reveal} the candidate in each of their backings. At the end of this period, all backings are tallied for all members in the pool, and all backings without a corresponding revelation are ignored. To decide the council members during the tallying, the candidate pool members are ranked in terms of the total amount of stake across all revealed backings in their favour. All outside of the council size are discarded, and if the council size is not filled, then one re-enters the announcement stage.
+\item[-] \textbf{Reveal stage:} All members who backed candidates must submit their salts to \textit{reveal} the candidate in each of their backings. At the end of this period, all backings are tallied for all members in the pool, and all backings without a corresponding revelation are ignored. Regarding considering the council members during tallying, the candidate pool members are ranked in terms of the total amount of stakes across all revealed backings in their favour. All those outside the council size are discarded and, if the council size is not filled, then one can re-enter the announcement stage.
 
-\item[-] \textbf{Grace Stage:} All stake introduced in the given term which was backing a losing candidate, or was not revealed, is immediately unstaked. This is so all properly new stake should be able to exit the consequences of an unfavourable council. At the end of this period, a new term begins, with a new council. This is also is the start of the unbonding period for all stake which does not continue in the next term.
+\item[-] \textbf{Grace stage:} All stake introduced in the given term backing a losing candidate or not revealed, is immediately unstaked. This is done so that all new stake is able to exit the consequences of an unfavourable council. At the end of this period, a new term begins with a new council. This is also is the start of the unbonding period for all stake that does not continue in the next term.
 
 \end{itemize}
 
@@ -535,30 +535,30 @@ The election has four stages.
 
 \subsubsection{Rewards}
 
-Voters do receive an earned payoff, however council members receive a payoff proportional to the rate of participation in processing proposals, hence it is off the form $p_{i}u^{\mathsf{CM}}$, where $p_i$ is the \textit{participation rate}, i.e. rate of non-abstention (and thus revealed) votes over all votes, of the $i$-th council member, and $u^{\mathsf{CM}}$ is a base reward across all council members for the given period.
+Voters do receive an earned payoff; however, council members receive a payoff proportional to the rate of participation in processing proposals, which is is of the form $p_{i}u^{\mathsf{CM}}$, where $p_i$ is the \textit{participation rate}, i.e., rate of non-abstention (and thus revealed) votes over all votes of the $i$-th council member, and $u^{\mathsf{CM}}$ is a base reward across all council members for the given period.
 
 \subsection{Proposals}
 
 \subsubsection{Types}
 
-At any given time, there exists a finite set of different proposal types. Each type as a value for each of the following properties, which apply to all proposals of the given type.
+At any given time, there exists a finite set of different proposal types. Each type is a value for each of the following properties that apply to all proposals of the given type.
 
 \begin{itemize}
-  \item[-] \textbf{Quorum:} The percentage of the council participants which must vote affirmatively in order for it to pass.
-  \item[-] \textbf{Threshold:} Minimum percentage of quorum which must vote for a given alternative for it to pass.
+  \item[-] \textbf{Quorum:} The percentage of the council participants who must vote affirmatively in order for the proposal to pass.
+  \item[-] \textbf{Threshold:} The minimum percentage of quorum that must vote for a given alternative for it to pass.
   \item[-] \textbf{Constitutionality:} The number of council periods in a row that must confirm the proposal for it to pass.
 \end{itemize}
 
-A proposal type takes the form of one among three different types of propositions. The \textit{binary proposition} is a simple pass or reject, the \textit{multiple choice proposition} require selecting one among at least two different affirmative alternatives, or rejection, and lastly the \textit{ranked choice proposition} requires providing a total ranking of a finite set of alternatives, or rejection.
+A proposal type takes the form of one among three different types of propositions. The \textit{binary proposition} is a simple pass or reject, the \textit{multiple choice proposition} require selecting one among at least two different affirmative alternatives or rejection and, lastly, the \textit{ranked choice proposition} requires providing a total ranking of a finite set of alternatives or rejection.
 
 \subsubsection{Life cycle}
 
-A proposal, of a given type, is first created by a member referred to as the \textit{proposal sponsor}. The sponsor has to back the proposal with a given amount of stake. This amount may be altered through a proposal, and the new amount goes into effect at the start of the next term. Once a proposal has been created, the council members may begin submitting sealed votes on the proposition, in what is called the \textit{voting stage}. The sealed vote can be one among
+A proposal, of a given type, is first created by a member referred to as the \textit{proposal sponsor}. The sponsor has to back the proposal with a given amount of stake. This amount may be altered through a proposal, and the new amount goes into effect at the start of the next term. Once a proposal has been created, the council members can start submitting sealed votes on the proposition in what is known as the \textit{voting stage}. The sealed vote can be one among
 
 \begin{itemize}
   \item[-] \textbf{Abstention:} Signals presence, but unwillingness to cast judgment on substance of vote.
   \item[-] \textbf{Reject:} Against proposal.
-  \item[-] \textbf{Affirm:} Pass, an alternative or a ranking, for binary, multiple choice and ranked choice propositions, respectively.
+  \item[-] \textbf{Affirm:} Pass an alternative or a ranking for binary, multiple-choice, and ranked-choice propositions, respectively.
   \item[-] \textbf{Slash:} Against the proposal, and slash proposal stake.
 \end{itemize}
 
@@ -567,47 +567,47 @@ This stage ends on the earliest of the following events
 \begin{enumerate}
   \item[(a)] All council members have submitted sealed votes.
   \item[(b)] Time since proposal creation has exceeded a designated platform parameter. This amount may be altered through a proposal, and the new amount goes into effect at the start of the next term.
-  \item[(c)] End of the given term, at which point the proposal is automatically rejected by the council.
+  \item[(c)] End of the given term, the point at which the proposal is automatically rejected by the council.
 \end{enumerate}
 
-The next stage allows the council members to submit revelations for their prior sealed votes, and its called the \textit{revelation stage}. At the end of this stage, the tallying commences, which works as follows.
+The next stage allows the council members to submit revelations for their prior sealed votes and is referred to as the \textit{revelation stage}. At the end of this stage, the tallying commences, which works as follows.
 
-If all revealed votes are slashes, then the proposal is rejected, and the proposal stake is slashed. To clear the quorum requirement, the percentage of council members with revealed votes must be no less than the quorum value for the given proposal type. To clear the threshold requirement, the percentage of council members which voted in favour of the proposition must be no less than the threshold. For multiple and ranked choice propositions this is interpreted to mean the number of votes in favour of the most popular choice or single ranking, respectively.
+If all revealed votes are slashes, then the proposal is rejected and the proposal stake slashed. To clear the quorum requirement, the percentage of council members with revealed votes must be no less than the quorum value for the given proposal type. To clear the threshold requirement, the percentage of council members voting in favour of the proposition must be no less than the threshold. For multiple and ranked-choice propositions, this is interpreted to mean the number of votes in favour of the most popular choice or single ranking, respectively.
 
-When a proposal passes, it will immediately be put into effect, however, many proposal types will have some applicability pre-condition which must be satisfied for it to be valid. If this does not hold at this time, then the proposal is simply discarded. This may happen in scenarios where the state of the platform changes in some way which was not foreseen by the initial proposal sponsor or council.
+When a proposal passes, it needs to immediately be put into effect; however, many proposal types have some applicability pre-condition that must be satisfied for it to be valid. If this does not hold at this time, then the proposal is simply discarded. This can occur in scenarios where the state of the platform changes in a way not foreseen by the initial proposal sponsor or council.
 
-In all scenarios above, an archived record of how a proposal was processed will be left for future inspection.
+In all scenarios given above, an archived record of how a proposal was processed will be left for future inspection.
 
 % Add pseudo code for how to process votes
 
 \subsection{Working Groups} \label{sec:working_groups}
 
-All non-validator service provider roles on the platform are organized into domain specific groups, called \textit{working groups}, of which there are the following.
+All non-validator service-provider roles on the platform are organized into domain specific groups termed \textit{working groups}, which comprise the following.
 
 \begin{enumerate}
-  \item \textbf{Membership Screening:} Grant membership status to members while trying to avoid Sybil
-  \item \textbf{Membership Curation:} Monitor membership base for abuse and Sybil attacks.
+  \item \textbf{Membership screening:} Grant membership status to members while trying to avoid Sybil.
+  \item \textbf{Membership curation:} Monitor membership base for abuse and Sybil attacks.
   \item \textbf{Content:} Curates and manages the availability and integrity of content in the content directory.
-  \item \textbf{Storage and Distribution:} Stores and distributes static data to consumers on demand.
-  \item \textbf{Live Streaming (in future draft):} Distributes dynamic video data to consumers.
-  \item \textbf{Discovery:} Provides standard discovery services over the content directory to consumers, i.e. search and recommendations.
-  \item \textbf{Software Development:} Develops and deploys all software assets of the platform, including consensus code and user facing applications.
-  \item \textbf{Content Finance:} Curates content finance market, and adjudicates project disputes.
+  \item \textbf{Storage and distribution:} Stores and distributes static data to consumers on demand.
+  \item \textbf{Live streaming (in future draft):} Distributes dynamic video data to consumers.
+  \item \textbf{Discovery:} Provides standard discovery services over the content directory to consumers, i.e., search and recommendations.
+  \item \textbf{Software development:} Develops and deploys all software assets of the platform, including consensus code and user facing applications.
+  \item \textbf{Content finance:} Curates content finance market and adjudicates project disputes.
   \item \textbf{Advertising:} Polices the advertising market on the platform.
-  \item \textbf{Communications (in future draft):} Administrates the on chain forums, messaging channel governance and user support inquires.
+  \item \textbf{Communications (in future draft):} Administrates the on-chain forums, messaging channel governance, and user support inquires.
 \end{enumerate}
 
-\subsubsection{Leads and Workers}
+\subsubsection{Leads and workers}
 
-Each group has two distinct types of roles, the \textit{group lead} and the \textit{worker}. Leads are elected by the council through the proposal system, and the lead is responsible for populating and managing other roles in the given group, as well policing the conduct of group workers. Leads can also be replaced or evicted, and if the latter happens - or if there is no lead to begin with, then no group workers can perform any platform level actions until a new leader is installed. The particular rights and privilege of a worker is entirely dependant on the group in question.
+Each group has two distinct types of roles, namely the \textit{group lead} and the \textit{worker}. Leads are elected by the council through the proposal system and are responsible for populating and managing other roles in the given group as well policing the conduct of group workers. Leads can also be replaced or evicted and, if the latter, or if there is no lead to begin with, then no group workers can perform any platform-level actions until a new leader is installed. The particular rights and privilege of a worker is entirely dependant on the group in question.
 
-Each group pays out a reward to all group members at a given interval, called the \textit{group payout period}, which is a platform parameter distinct for each group. This may be altered through a proposal, and the new value goes into effect at the start of the next period.
+Each group pays out a reward to all group members at a given interval referred to as the \textit{group payout period}, which is a platform parameter distinct for each group. This may be altered through a proposal, and the new value goes into effect at the start of the next period.
 
-\subsubsection{Installing, Replacing and Evicting Leads}
+\subsubsection{Installing, replacing, and evicting leads}
 
-There are three scenarios under which a new group lead may be introduced in a given group. In the case where there is no existing lead, which is only the case while bootstrapping, is referred to as \textit{installation}. When an existing lead is leaving their position by their own initiation or alternatively by initiative from the council, and a new one is to be introduced, are referred to as \textit{replacement} and \textit{eviction} respectively.
+There are two scenarios under which a new group lead may be introduced in a given group: in the case where there is no existing lead, which is only the case while bootstrapping, and is referred to as \textit{installation}; when an existing lead is leaving their position by their own initiation or alternatively by initiative from the council, and a new one is to be introduced. These are referred to as \textit{replacement} and \textit{eviction}, respectively.
 
-In all cases, candidates for a group lead role come from a list on the platform called for the given group called the \textit{group lead candidate list}. Members can enter the list by staking the amount required to hold the group lead position for the given group. Each list is a fixed size, and if more than this number of potential candidates have staked, then inclusion is determined by how much has been staked beyond the limit, although the actual staked amount when introduced a lead is always the staking limit.
+In all cases, candidates for a group lead role come from a list on the platform called for the given group referred to as the \textit{group lead candidate list}. Members can enter the list by staking the amount required to hold the group lead position for the given group. Each list is a fixed size and, if the number of potential candidates who have staked is greater, then inclusion is determined by how much has been staked beyond the limit, although the actual staked amount when introduced a lead is always the staking limit.
 
 %TODO: We need to write more here when the individual group schemes have been finalised
 
@@ -615,35 +615,33 @@ In all cases, candidates for a group lead role come from a list on the platform 
 
 \subsection{Overview}
 
-As mentioned before, for example in section \ref{sec:member}, it should be possible to onboard users who do not hold any tokens. This activity, which is called \textit{screening}, allows the platform to accommodate new users who can try the platform within certain constraints. However, the combination of no robust identity system and allowing users to consumer resources without paying on the margin creates its own set of new problems. These resources need not only be in the form of tangibles like compute and storage, but also things like peer member attention. Not only does this result in wasteful overutilisation, but perhaps more importantly, it allows platform participants to shape their own payouts by at a low cost, since resource use is often tied to payouts. For example viewing content will divert a larger share of payout to the publisher.
+As mentioned before, for example, in section \ref{sec:member}, it should be possible to onboard users who do not hold any tokens. This activity, referred to as  \textit{screening}, allows the platform to accommodate new users who wish to try the platform within certain constraints. However, the combination of no robust identity system and allowing users to consume resources without paying on the margin creates its own set of new problems. These resources need not only be in the form of tangibles such as compute and storage, but can also be things like peer member attention. Not only does this result in wasteful overutilisation but, perhaps, more importantly, it allows platform participants to shape their own payouts by at a low cost, since resource use is often tied to payouts. For example, viewing content will divert a larger share of payout to the publisher.
 
-The Joystream protocol also suffers from these ills in principle, at least under a certain set of policy choices. There is no final solution to this without dealing with the fundamental identity and pricing preconditions. None the less, it is critical to equip the platform with a baseline capacity to engage in the sort of cat and mouse dynamic with such abuse, in order to reduce the feasibility and cost of attacks.
+The Joystream protocol also suffers from these ills in principle, at least under a certain set of policy choices. There is no final solution to this without dealing with the fundamental identity and pricing preconditions. None the less, it is critical to equip the platform with a baseline capacity to engage in the presumed cat-and-mouse dynamic with such abuse to reduce the feasibility and cost of attacks.
 
-This is achieved by two measures, firstly, there is a capacity to block access to the platform in various ways. This activity, which is called \textit{suspending}, specifically prevents the relevant actor from being able to participate on the platform through base membership actions.
-Secondly, when anyone is onboarded through screening, the corresponding platform actor who onboarded them is recorded, and can be punished for a long time into the future, with a suitable bonding period, if abuse is uncovered.
+This is achieved by two measures: first, there is a capacity to block access to the platform in various ways. This activity is termed \textit{suspending} and specifically prevents the relevant actor from being able to participate in the platform through base membership actions.
+Second, when anyone is onboard through screening, the corresponding platform actor who onboard with them is recorded and can be punished for a long time in  future, with a suitable bonding period if the abuse is uncovered.
 
-\subsection{Working Groups}
+\subsection{Working groups}
 
-This work is parceled out into two complementary working groups, the screening and the curation working group. Both groups allow all members to engage in the same set of group activities, except for the lead which is also involved in normal group lead activity.\footnote{In principle it is probably advisable to keep the screening group small, even perhaps a single actor at any given time, in order to keep the set of stakeholders in this capacity limited. This also makes a longer unbonding and staking period more economical.}
+This work is parceled out into two complementary working groups, the screening and curation working groups. Both groups allow all members to engage in the same set of group activities, except for the lead, which is also involved in normal group lead activity.\footnote{In principle it is probably advisable to keep the screening group small, even perhaps to a single actor at any given time, in order to keep the set of stakeholders in this capacity limited. This also makes a longer unbonding and staking period more economical.}
 
 \subsection{Screening}
 
-Participants in the screening working group can all engage in the screening process, and are in that capacity referred to as a \textit{screening authority}.
+Participants in the screening working group can engage in the screening process and are in that capacity referred to as a \textit{screening authority}.
 
-The precise steps involved in screening, which is an offchain process, is entirely exogenous to the protocol. The set of actual policies, and corresponding tools, in production at any given time are expected to be the result of ongoing coordination, based on policy constraints from the council and group lead. Obvious mechanisms which could be employed are
-
-
+The precise steps involved in screening, which is an offchain process, are entirely exogenous to the protocol. The set of actual policies and corresponding tools in production at any given time is expected to be the result of an ongoing coordination, based on policy constraints from the council and group lead. Obvious mechanisms that can be employed comprise the following:
 
 \begin{enumerate}
   \item[(a)] Email or social media confirmation.
-  \item[(b)] CAPTCHA or other labeling or perceptual tasks.
+  \item[(b)] CAPTCHA, or other labeling, or perceptual tasks.
   \item[(c)] Onboarding delays.
   \item[(d)] Manual human confirmation.
 \end{enumerate}
 
-As part of being screened, as prospective member must accept a set of terms, called the \textit{screening terms}, defined as\\
+As part of being screened, a prospective member must accept a set of terms referred to as the \textit{screening terms} and defined as\\
 
-\begin{concept_box}{Screening Terms}
+\begin{concept_box}{Screening terms}
     \begin{itemize}
       \item[-] \textbf{ID:} Unique integer identifier.
       \item[-] \textbf{Proxy Quota:} Initial quota for membership.
@@ -652,59 +650,59 @@ As part of being screened, as prospective member must accept a set of terms, cal
 \end{concept_box}
 
 
-The terms to be used at any given time are called the \textit{active screening terms}, and they are changed through the proposal system.
+The terms to be used at any given time are known as the \textit{active screening terms} and can be changed through the proposal system.
 
-A new member can be added by a screening authority by presenting a signature of the current active terms (or similar) by a key which is also used as a basis for the membership. When this happens, the ID of the authority is also included in the membership (see section \ref{sec:member_profile}).
+A new member can be added through screening authority by presenting a signature of the current active terms (or similar) using a key that can also be used as a basis for the membership. When this happens, the ID of the authority is also included in the membership (see section \ref{sec:member_profile}).
 
 \subsection{Suspension} \label{sec:suspension}
 
-The organization and principles of this working group is identical to the screening working group. There are three distinct forms of suspension which can be initiated, namely
+The organization and principles of this working group is identical to the screening working group. There are three distinct forms of suspension that can be initiated, namely
 
 \begin{itemize}
   \item[-] \textbf{Individual:} A specific member can be suspended by setting the appropriate membership field.
 
-  \item[-] \textbf{Group:} A proposal can be submitted which allows for the simultaneous suspension of all members who have been added through screening from a given screening authority within a given window of time in the past.
+  \item[-] \textbf{Group:} A proposal can be submitted allowing for the simultaneous suspension of all members who have been added through screening from a given screening authority within a given window of time in the past.
 
-  \item[-] \textbf{Lock Down:} A proposal can be submitted which allows for simultaneous suspension of all members.
+  \item[-] \textbf{Lock down:} A proposal can be submitted allowing for simultaneous suspension of all members.
 \end{itemize}
 
 \subsection{Rewards}
 
-All working group participants have some given group based periodic payoff, set by council.
+All working group participants have some given group-based periodic payoff set by the council.
 
-\section{Data Storage and Distribution} \label{sec:data_storage_and_distribution}
+\section{Data storage and distribution} \label{sec:data_storage_and_distribution}
 
 \subsection{Overview}
 
-Reliably storing and distributing off-chain static data at scale is one of the primary requirements of the platform. This includes data such as media content, metadata, applications and static assets, and private (encrypted) member data, such as preferences and statistics. Specifically, this subsystem should satisfy a range of objectives
+Reliably storing and distributing off-chain static data at scale is one of the primary requirements of the platform. This includes data such as media content, metadata, applications and static assets, and private (encrypted) member data such as preferences and statistics. Specifically, this subsystem should satisfy a range of objectives
 
 \begin{itemize}
   \item[-] \textbf{Consumption:} Members can
 
   \begin{itemize}
-      \item[(a)] upload content, respecting certain platform quota limits, for free, and expect permanence and distribution.
+      \item[(a)] upload content, respecting certain platform quota limits, for free and expect permanence and distribution.
 
       \item[(b)] securely download data, respecting certain platform quota limits, for free.
 
-      \item[(c)] fully utilize system with communication and resource constraints of a browser environment.
+      \item[(c)] fully utilize a system with communication and resource constraints of a browser.
 
   \end{itemize}
 
-  \item[-] \textbf{Paying:} Quota restrictions can be augmented as a result of paying (e.g. through subscription), or discretionary changes made by platform governance.
+  \item[-] \textbf{Paying:} Quota restrictions can be augmented as a result of paying (e.g. through subscription) or discretionary changes made by platform governance.
 
-  \item[-] \textbf{Fault Tolerance:} Storage has some level of fault tolerance for all content, which ensures that single actor faults do not lead to permanent data loss. This replication should economise on cost, and be sensitive to platform policy about the desired rate of tolerance.
+  \item[-] \textbf{Fault tolerance:} Storage has some level of fault tolerance for all content, which ensures that single actor faults do not lead to permanent data loss. This replication should economize on cost and be sensitive to platform policy regarding the desired rate of tolerance.
 
-  \item[-] \textbf{Dynamic:} The platform should dynamically be able to be and remain effective at distributing content in concert with changes in total volume of downstream demand, and where this demand is located.
+  \item[-] \textbf{Dynamic:} The platform should dynamically be able to be and remain effective at distributing content in concert with changes in total volume of downstream demand and where this demand is located.
 
-  \item[-] \textbf{Privacy:} View counts and quota limits are maintained without leaving a permanent public history of what end user viewed what, and sharing viewing activity with as few counterparties as possible.
+  \item[-] \textbf{Privacy:} View counts and quota limits are maintained without leaving a permanent public history of what end user viewed what and sharing viewing activity with as few counterparties as possible.
 
-  \item[-] \textbf{Ad Awareness:} It may be desirable to interleave media distribution with a dynamic advertising system, and to support this the infrastructure must know when to inject what ad, to whom, and how long to block until normal distribution is resumed.
+  \item[-] \textbf{Ad Awareness:} It may be desirable to interleave media distribution with a dynamic advertising system and, in order to support this, the infrastructure must know when to inject what ad, to whom, and how long to block until normal distribution is resumed.
 
-  \item[-] \textbf{Low Bar:} Barrier to entry for aspiring service providers is not too high, for example in the requirement of lots of hardware or stake
+  \item[-] \textbf{Low Bar:} Barrier to entry for aspiring service providers is not too high, for example, in the requirement of lots of hardware or stake.
 
 \end{itemize}
 
-The key problem in organizing this part of the platform is correctly enforcing rewards and punishments on the infrastructure providers. This requires that one can accurately determine whether they are behaving correctly. At the core of this assessment lies the problem of how to adjudicate disputes over the timeliness and integrity of response to queries. It is fundamentally not possible to furnish direct purely cryptographic proofs about such claims, hence the fallback of most alternatives is to construct mechanisms which provide game theoretic assurances of honest and reliable conduct. These alternatives most often attempt to be open commodity markets, where buyers and sellers have temporary relationships. Here a much simpler approach is taken, where most good conduct is expected based on risk of governance based sanctions on deposited bonds, and losing reputational capital which give. Honesty of the platform, and thus its governance outcomes, is assumed to be reliable due to being a long term player.
+The key problem in organizing this part of the platform is correctly enforcing rewards and punishments on the infrastructure providers. This requires that one accurately determines whether they are behaving correctly. At the core of this assessment lies the problem of how to adjudicate disputes over the timeliness and integrity of response to queries. It is fundamentally not possible to furnish direct purely cryptographic proofs about such claims; hence, the fallback of most alternatives is to construct mechanisms that provide game theoretic assurances of honest and reliable conduct. These alternatives most often attempt to be open commodity markets, where buyers and sellers have temporary relationships. Here, a much simpler approach is utilized, where most good conduct is expected based on risk of governance-based sanctions on deposited bonds, and losing reputational capital. Honesty of the platform, and thus its governance outcomes, is assumed to be reliable due to being a long-term player.
 
 \subsection{Working Group}
 
@@ -712,99 +710,99 @@ The working group is made up of the following roles
 
 \begin{itemize}
 
-  \item[-] \textbf{Lead:} Has the normal group lead responsibilities, but also performs two additional coordinating functions, namely
+  \item[-] \textbf{Lead:} Has the normal group-lead responsibilities, but also performs two additional coordinating functions, namely
 
       \begin{itemize}
 
-      \item[(a)] Produces policy for how different data should be distributed at any given time
+      \item[(a)] Produces policy for how different data should be distributed at any given time.
 
-      \item[(b)] Receives and processes errors about misconduct or unavailability among group members
+      \item[(b)] Receives and processes errors about misconduct or unavailability among group members.
 
       \end{itemize}
 
-  \item[-] \textbf{Storage:} Stores a copy of some subset of data in the data directory, and replicates to peers and distributors upon request.
+  \item[-] \textbf{Storage:} Stores a copy of some subset of data in the data directory and replicates to peers and distributors upon request.
 
   \item[-] \textbf{Distributor:} Distributes data in the data directory on demand to members.
 
 \end{itemize}
 
-\subsection{Storage Providers}
+\subsection{Storage providers}
 
-A storage provider is member of a group of providers, called a \textit{storage tranche group}, who all share the same participation terms. A tranche is defined as follows \\
+A storage provider is member of a group of providers termed \textit{storage tranche group} who share the same participation terms. A tranche is defined as follows: \\
 
-\begin{concept_box}{Storage Provider Tranche}
+\begin{concept_box}{Storage provider Tranche}
     \begin{itemize}
       \item[-] \textbf{ID:} Unique integer identifier.
-      \item[-] \textbf{Capacity:} The number of bytes of storage capacity which is required.
-      \item[-] \textbf{Out Speed:} The number of Mbps out which are required.
+      \item[-] \textbf{Capacity:} The number of bytes of storage capacity required.
+      \item[-] \textbf{Out speed:} The number of Mbps required.
       \item[-] \textbf{Stake:} The amount of stake required.
-      \item[-] \textbf{Duration:} The number of blocks service must be provided from initiation block.
+      \item[-] \textbf{Duration:} The number of block service to be provided from the initiation block.
       \item[-] \textbf{Fixed Reward:} Quantity of native token earned per unit of time.
-      \item[-] \textbf{Variable Reward:} Quantity of native token earned per unit of date stored.
+      \item[-] \textbf{Variable Reward:} Quantity of native tokens earned per unit of date stored.
       \item[-] \textbf{Slots:} Total number of roles available in this tranche.
-      \item[-] \textbf{Terms:} String of capped length (UTF-8) describing the human readable conditions which are being agreed upon.
-      \item[-] \textbf{Active:} Whether tranche is actually possible to use, that is assign new members to.
+      \item[-] \textbf{Terms:} String of capped length (UTF-8) describing the human readable conditions to be agreed upon.
+      \item[-] \textbf{Active:} Whether tranche is actually possible to use, that is, assign new members.
     \end{itemize}
 \end{concept_box}
 
-All are kept in a mapping called the \textit{tranche registry}, which maps tranche ID to the corresponding tranche. Even when a tranche is no longer active, or will be used in the future, it will continue to be part of the registry.
+All these are kept in a mapping known as the \textit{tranche registry}, which maps tranche ID to the corresponding tranche. Even when a tranche is no longer active, or will be used in the future, it continues to be a part of the registry.
 
-The participation of a member in the role as a storage provider is represented by a \textit{tranche membership}, and is defined as follows \\
+The participation of a member in the role as a storage provider is represented by a \textit{tranche membership} and is defined as follows: \\
 
-\begin{concept_box}{Tranche Membership}
+\begin{concept_box}{Tranche membership}
     \begin{itemize}
       \item[-] \textbf{Member:} Membership ID.
       \item[-] \textbf{Tranche:} Tranche profile ID.
       \item[-] \textbf{Started:} Block height where role started.
       \item[-] \textbf{Availability:} Amount of bytes still available.
-      \item[-] \textbf{Active:} The block at which this provider should be considered active.
+      \item[-] \textbf{Active:} The block at which this provider is to be considered active.
       \item[-] \textbf{Paused:} Whether this role is currently paused.
     \end{itemize}
 \end{concept_box}
 
-All such profiles live in a mapping from the ID to the profile, called the \textit{storage providers}. A member is only considered a provider when the corresponding profile is registered in this map, and this happens through the group lead. The active status of a membership is meant to afford some time between when the provider has entered the role, and when there is a full obligation to provide service. The pausedness of a membership is meant to allow discretionary pause in inbound storage requests due to extraordinary circumstances, and can be invoked by the member or lead directly.
+Such profiles live in a mapping from the ID to the profile termed the \textit{storage providers}. A member is only considered a provider when the corresponding profile is registered in this map, and this happens through the group lead. The active status of a membership is meant to afford some time between when the provider has entered the role and when there is a full obligation to provide service. The pausedness of a membership is meant to allow discretionary pause in inbound storage requests due to extraordinary circumstances and can be invoked by the member or lead directly.
 
-Notice that the same member may participate as a storage provider multiple times, and under different tranches.
+Note that the same member may participate as a storage provider multiple times and under different tranches.
 
 \subsection{Distributors}
 
-Distributors are organized in a very similar way to storage providers, with analogous concepts such as \textit{distributor tranche group}, \textit{profile},  \textit{registry} and \textit{membership}, with suitable minor alterations. In particular, tranches will also include information about geographically bound latency guarantees and number of simultaneous upstream connections.
+Distributors are organized in a very similar way to storage providers, with analogous concepts such as \textit{distributor tranche group}, \textit{profile},  \textit{registry} and \textit{membership}, with suitable minor alterations. In particular, tranches will also include information about geographically bound latency guarantees and the number of simultaneous upstream connections.
 
-\subsection{Data Directory}
+\subsection{Data directory}
 
 The platform maintains state about the available data, and how it is distributed, in the \textit{data directory}. All data objects stored correspond to one among a finite set of \textit{data object types}. Each type is meant to capture the following storage and distribution requirements for some broader family of objects:
 
 \begin{itemize}
-  \item[-] \textbf{Infrastructure Requirements:} By allowing a range of guarantees about permanence and performance, which better aligns with the underlying requirements of different data objects, one can allow better resource utilization.
+  \item[-] \textbf{Infrastructure requirements:} By allowing a range of guarantees about permanence and performance, which better aligns with the underlying requirements of different data objects, one can allow better resource utilization.
 
-  \item[-] \textbf{Access Policy:} Some objects may only be accessible to a given member for certain periods of time, if at all. The obvious example would be data objects which are behind paywalls.
+  \item[-] \textbf{Access policy:} Some objects may only be accessible to a given member for certain periods of time, if at all. The obvious example will be data objects behind paywalls.
 
-  \item[-] \textbf{Accounting Procedures:} Some objects may require some kind of accounting or cleanup process as a result of the accessing the data. This could for example be to record reliable access statistics for media content, i.e. view count.
+  \item[-] \textbf{Accounting procedures:} Some objects may require some kind of accounting or cleanup as a result of accessing the data. This can, for example, be used to record reliable access statistics for media content, i.e., view count.
 
 \end{itemize}
 
-The first requirement is about reducing cost, the latter two is about making the same infrastructure parametric, and thus reusable for a wide range of purposes. A data object type is specifically designed as follows  \\
+The first requirement is about reducing cost while the latter two about making the same infrastructure parametric and thus reusable for a wide range of purposes. A data object type is specifically designed as follows:  \\
 
-\begin{concept_box}{Data Object Type}
+\begin{concept_box}{Data object type}
 
 \begin{itemize}
   \item[-] \textbf{ID:} Unique integer identifier.
   \item[-] \textbf{Description:} Human readable description.
-  \item[-] \textbf{Size Limit:} When set, represents the maximum number of bytes.
-  \item[-] \textbf{Replication Factor:} Number of copies for data objects of this type that must exist in the storage system at any time. The simplest interpretation for this is the minimum number of storage providers that must replicate the data object.
-  \item[-] \textbf{Storage Tranches:} Set of tranche IDs which can be used with this data type. If empty, then any tranche may be used.
+  \item[-] \textbf{Size limit:} When set, represents the maximum number of bytes.
+  \item[-] \textbf{Replication factor:} Number of copies for data objects of this type that need to exist in the storage system at any time. The simplest interpretation for this is the minimum number of storage providers that must replicate the data object.
+  \item[-] \textbf{Storage tranches:} Set of tranche IDs that can be used with this data type. If empty, then any tranche can be used.
   \item[-] \textbf{Active:} Whether objects of this type can be added at this time.
 \end{itemize}
 \end{concept_box}
 
-All available types are kept in mapping, called the \textit{data object type registry}, which maps the ID to such a type. Admissible storage tranches are in part kept on the platform to allow automatic assignment of storage providers to any new data object of a given type. For the same reason there is no commitment to the distributor tranche, because distribution requirements will often depend on internal details about the data object itself which are hard to fully describe. As an example, it may be the case that whenever a particular publisher uploads a media item, there will be substantial inbound download requests from a corresponding area. This type of policy rule is better left to discretion to setup, rather than an automatic consensus rule.
+All available types are kept in mapping termed the \textit{data object type registry}, which maps the ID to such a type. Admissible storage tranches are in part kept on the platform to allow automatic assignment of storage providers to any new data object of a given type. For the same reason, there is no commitment to the distributor tranche because distribution requirements will often depend on internal details about the data object itself, which are hard to fully describe.For example, it can be the case where whenever a particular publisher uploads a media item, there are substantial inbound download requests from a corresponding area. This type of policy rule is better left to discretion to setup rather than an automatic consensus rule.
 
-Each data object is defined as follows\\
+Each data object is defined as follows:\\
 
 \begin{concept_box}{Data Object}
 \begin{itemize}
 
-  \item[-] \textbf{CID:} A content identifier which allows for secure authentication of the data under some implicit chunking schema.
+  \item[-] \textbf{CID:} A content identifier that allows secure authentication of the data under some implicit chunking schema.
 
   \item[-] \textbf{Type:} Data type ID.
 
@@ -814,19 +812,19 @@ Each data object is defined as follows\\
 
   \item[-] \textbf{Added:} Date and time for original upload event.
 
-  \item[-] \textbf{Origin:} ID of member who uploaded data.
+  \item[-] \textbf{Origin:} ID of member who uploaded the data.
 
-  \item[-] \textbf{Liaison:} ID of storage provider which accepted initial upload.
+  \item[-] \textbf{Liaison:} ID of storage provider that accepted the initial upload.
 
-  \item[-] \textbf{Liaison Judgement:} One among \textit{pending}, \textit{rejected} and \textit{accepted}.
+  \item[-] \textbf{Liaison judgement:} One among \textit{pending}, \textit{rejected}, and \textit{accepted}.
 
 \end{itemize}
 
 \end{concept_box}
 
-All records are kept in the \textit{data object registry}, which is a mapping from the CID to the corresponding record. The fact that a storage provider is storing a data object is represented by a \textit{data object storage relationship}, which is defined as follows \\
+All records are kept in the \textit{data object registry}, which is a mapping from the CID to the corresponding record. The fact that a storage provider is storing a data object is represented by a \textit{data object storage relationship}, which is defined as follows: \\
 
-\begin{concept_box}{Data Object Storage Relationship}
+\begin{concept_box}{Data object storage relationship}
     \begin{itemize}
 
       \item[-] \textbf{ID:} Unique integer identifier.
@@ -835,16 +833,16 @@ All records are kept in the \textit{data object registry}, which is a mapping fr
 
       \item[-] \textbf{Storage:} ID of storage provider which should store object.
 
-      \item[-] \textbf{Ready:} Whether the service relationship is ready to be honored by provider.
+      \item[-] \textbf{Ready:} Whether the service relationship is ready to be honored by the provider.
 
     \end{itemize}
 \end{concept_box}
 
-All such relationships are kept in the \textit{storage relationship registry}, which maps the ID to the relationship. Analogous concepts for distribution, called \textit{data object distribution relationship} and \textit{distribution relationship registry}, also exist.
+Such relationships are kept in the \textit{storage relationship registry}, which maps the ID to the relationship. Analogous concepts for distribution that are referred to as \textit{data object distribution relationship} and \textit{distribution relationship registry} also exist.
 
-Lastly, a member downloading a data object is represented by a \textit{download session}, which is defined as follows \\
+Lastly, a member downloading a data object is represented by a \textit{download session}, which is defined as follows: \\
 
-\begin{concept_box}{Download Session}
+\begin{concept_box}{Download session}
 
     \begin{itemize}
 
@@ -852,9 +850,9 @@ Lastly, a member downloading a data object is represented by a \textit{download 
 
       \item[-] \textbf{Consumer:} ID for for member downloading.
 
-      \item[-] \textbf{Distributor:} ID for distributor which distributes the content.
+      \item[-] \textbf{Distributor:} ID for distributor that distributes the content.
 
-      \item[-] \textbf{Initiated:} Date and time when session was initiated.
+      \item[-] \textbf{Initiated:} Date and time when the session was initiated.
 
       \item[-] \textbf{State:} Either \textit{started} or \textit{ended}.
 
@@ -864,20 +862,20 @@ Lastly, a member downloading a data object is represented by a \textit{download 
 
 \end{concept_box}
 
-All such sessions are kept in the \textit{download session registry}, which maps the ID to the session. Please see discussion (section \ref{sec:discussion}) on how to address obvious scale and privacy problems introduced by sessions and the registry.
+Such sessions are kept in the \textit{download session registry}, which maps the ID to the session. Please see the discussion (section \ref{sec:discussion}) on how to address obvious scale and privacy problems introduced by sessions and the registry.
 
 \subsection{Uploading} \label{sec:data_storage_and_distribution:uploading}
 
-A normal uploading flow goes as follows \footnote{This is a highly informal description which will be fleshed out in future drafts.}.
+A normal uploading flow is as follows \footnote{This is a highly informal description which will be fleshed out in future drafts.}:
 
 \begin{enumerate}
 
 \item
-The user issues a transaction to create a new data object record, by providing a CID for the underlying payload, as well as information about its size and type ID. The transaction is only valid if the
+The user issues a transaction to create a new data object record by providing a CID for the underlying payload as well as information about its size and type ID. The transaction is only valid if 
 
       \begin{itemize}
 
-          \item[(a)] the CID is not already in data registry.
+          \item[(a)] the CID is not already in the data registry.
 
           \item[(b)] the size respects data type size limit.
 
@@ -889,19 +887,19 @@ The user issues a transaction to create a new data object record, by providing a
 
       \end{itemize}
 
-If so, it will result in the creation of a data object record, where the liason and storage object relationships are automatically assigned. The latter all have an initial status of no being ready. The liason judgment is set to pending. If the record remains pending over some time limit, then the record goes away, and the lead should inspect any received error reports.
+If so, this will result in the creation of a data object record, where the liason and storage object relationships are automatically assigned. All the latter have an initial status of not being ready. The liason judgment is set to pending. If the record remains pending over some time limit, then the record goes away, and the lead is needed to inspect any received error reports.
 
 \item
-The user connects to the liason, and requests to upload the data by referencing the data object record. The storage provider can validate the request by reading the platform state, and should then proceed to accept the upload.
+The user connects to the liason and requests to upload the data by referencing the data object record. The storage provider can validate the request by reading the platform state and can only then proceed to accept the upload.
 
 \item
 The storage provider will check
 
       \begin{itemize}
 
-      \item[(a)] the payload matches the CID
+      \item[(a)] the payload matches the CID,
 
-      \item[(b)] has the right size
+      \item[(b)] has the right size, and
 
       \item[(c)] passes an upload filter\footnote{TBD.}
 
@@ -910,19 +908,19 @@ The storage provider will check
 If either fails, the judgment will be set to rejected for the given reason. If all pass, the judgement will be set to accepted, and the corresponding storage relationship will be set to ready.
 
 \item
-The liason must accept incoming replication attempts from all other providers which have a storage relationship with the given record. As they receive the payload, each has a responsibility to alter the readyness of their storage relationship. Any relationship which is still not ready after some defined period of time from the record being added is considered a failure. At this point the lead must inspect any possible reported errors and adjudicate.
+The liason must accept incoming replication attempts from all other providers with a storage relationship with the given record. As they receive the payload, each has a responsibility to alter the readiness of their storage relationship. Any relationship that is still not ready after some defined period of time from the time the record has been added is considered a failure. At this point, the lead must inspect any possible reported errors and adjudicate.
 
 \item
-When the time limit for replication by all storage providers has been exceeded, the lead creates distribution relationships for the record, based on local policy.
+When the time limit for replication by all storage providers has been exceeded, the lead creates distribution relationships for the record based on local policy.
 
 \item
-The distributors corresponding to the new relationships can connect to the storage providers which have corresponding storage relationships with ready status to acquire a copy of the payload.
+The distributors corresponding to the new relationships can connect to the storage providers that have corresponding storage relationships with ready status to acquire a copy of the payload.
 
 \end{enumerate}
 
 \subsection{Downloading}
 
-A normal downloading flow goes as follows \footnote{This is a highly informal description which will be fleshed out in future drafts.}.
+A normal downloading flow is as follows \footnote{This is a highly informal description which will be fleshed out in future drafts.}:
 
 % policy for accounting and access: where to get supplementary statE? type tells you.
 % should there be an `download mode` ifnormation for trying to access a given type of data?
@@ -931,13 +929,13 @@ A normal downloading flow goes as follows \footnote{This is a highly informal de
 \begin{enumerate}
 
 \item
-The downloader issues a transaction to create a download session, by providing the relevant CID. The transaction is accepted the following holds
+The downloader issues a transaction to create a download session by providing the relevant CID. The transaction is accepted once the following holds:
 
       \begin{itemize}
 
       \item[(a)] the CID corresponds to a data object record
 
-      \item[(b)] the data object record has at least one distributor relationship which is ready
+      \item[(b)] the data object record has at least one distributor relationship that is ready
 
       \item[(c)] the access policy of the data type accepts the request
 
@@ -946,112 +944,112 @@ The downloader issues a transaction to create a download session, by providing t
 If so, then a session is added to the session registry, which is in the started state and where the distributor has been chosen from the available ready set.
 
 \item
-The downloader connects to a host corresponding to the assigned distributor, and authenticates, and finally provides a verifiable reference to the new session.
+The downloader connects to a host corresponding to the assigned distributor and authenticates and finally provides a verifiable reference to the new session.
 
 \item
-The distributor sends verifiable (based on Authority Key) data chunks, in response to requests from the downloader, in a tit-for-tat exchange. The downloader sends to the distributor a signature over the claim that a certain total amount of data has been transmitted over the lifetime of the session, analogous to payment channels \cite{payment_channels}. To avoid latency there should be some amount of pipelinining.
+The distributor sends verifiable (based on Authority Key) data chunks in response to requests from the downloader in a tit-for-tat exchange. The downloader sends to the distributor a signature over the claim that a certain total amount of data has been transmitted over the lifetime of the session, analogous to payment channels \cite{payment_channels}. To avoid latency, there should be some amount of pipelinining.
 
 \item
-The exchange ends when either all data has been sent, or when the downloader terminates the exchange. At this point, the distributor will submit a new transaction with the most recent signed consumption statement from the downloader. This transaction will settle both the actual consumed data in the session and the state of the session.
+The exchange ends when either all data has been sent or when the downloader has terminated the exchange. At this point, the distributor will submit a new transactions with the most recent signed consumption statement from the downloader. This transaction will settle both the actual consumed data in the session and the state of the session.
 
 \item
 Any data type specific accounting policy is executed with reference to the session.
 
 \end{enumerate}
 
-\subsection{Entry, Exit and Distribution Policy Updates}
+\subsection{Entry, exit, and distribution policy updates}
 
-There are a number of key infrastructure dynamics, such as entry and exit of actors into the roles as distributors or storage providers, and also updating what are assigned to what data. These may be initiated and coordinated through off-chain messaging protocols, and honest conduct is expected purely on governance sanctions. This will be described in further detail in the future.
+There are a number of key infrastructure dynamics, such as entry and exit of actors into the roles as distributors or storage providers, and also updates on what is being assigned to what data. These may be initiated and coordinated through off-chain messaging protocols. An honest conduct is expected purely on governance sanctions. This will be described in further detail in the future.
 
-\subsection{Policing and Data Removal}
+\subsection{Policing and data removal}
 
 The storage and distribution infrastructure is really a utility for the rest of the platform, hence the removal of data from this infrastructure, for any reason, is under the control of the working group which has control over the use case to which the data corresponds.
 
 \subsection{Rewards}
 
-All payouts happen at a given group specific payout interval.
-The group lead is paid a given amount of tokens, regardless of what has occurred. Storage providers and distributors both have a fixed and variable payout component, where the latter is based off actual stored or distributed data quantities, and the rates are captured in the corresponding tranche profiles. The actual variable base quantities are maintained through the uploading assignment process, and data type specific accounting policies, respectively.
+All payouts take place at a given group-specific payout interval.
+The group lead is paid a given amount of tokens regardless of what has occurred. Storage providers and distributors both have a fixed and variable payout component, where the latter is based on the actual stored or distributed data quantities, and the rates are captured in the corresponding tranche profiles. The actual variable base quantities are maintained through the uploading assignment process and data type-specific accounting policies, respectively.
 
 % TODO: add section on livestreaming
 %\section{Livestreaming} \label{sec:livestreaming}
 
-\section{Content Directory} \label{sec:content_directory}
+\section{Content directory} \label{sec:content_directory}
 
 \subsection{Overview}
 
-The content directory contains information about the media content available on the platform. Importantly, it does not contain the primary media itself, that is stored in separate off chain infrastructure described in the section on storage and distribution (section \ref{sec:data_storage_and_distribution}).
+The content directory contains information about the media content available on the platform. More importantly, it does not contain the primary media itself, which is stored in a separate off-chain infrastructure described in the section on storage and distribution (section \ref{sec:data_storage_and_distribution}).
 
-\subsection{Working Group}
+\subsection{Working group}
 
-The working group has two roles, lead and member. Members are responsible for executing the following functions
+The working group comprises the lead and the member. Members are responsible for executing the following functions
 
 \begin{itemize}
 
-    \item[-] \textbf{Curation:} Ensuring that the underlying content media and metadata correspond to each other, e.g. that display assets are correct, or that content is in the correct category, etc.
+    \item[-] \textbf{Curation:} Ensuring that the underlying content media and metadata correspond to each other, e.g., in that they display assets are correct or content is in the correct category, etc.
 
-    \item[-] \textbf{Policing:} Adjudicating disputes around the availability, ownership and attribution of content.
+    \item[-] \textbf{Policing:} Adjudicating disputes around the availability, ownership, and attribution of content.
 
     \item[-] \textbf{Filtering:} Maintaining and developing the filtering technology in place when publishing to the directory.
 
-    \item[-] \textbf{Verification:} Granting privileged status to publishers and content as verified and canonical, which helps in discovery, and resolves disputes over the publisher namespace.
+    \item[-] \textbf{Verification:} Granting privileged status to publishers and content as verified and canonical, which helps in discovery and resolves disputes over the publisher namespace.
 
 \end{itemize}
 
 \subsection{Publisher}
 
-A \textit{publisher} is a member who is allowed to publish content in the content directory, and is defined as follows \\
+A \textit{publisher} is a member who is allowed to publish content in the content directory and is defined as follows: \\
 
 \begin{concept_box}{Publisher}
     \begin{itemize}
 
-        \item[-] \textbf{Name:} This is separate from membership name, and is its own namespace.
+        \item[-] \textbf{Name:} This is separate from membership name and is its own namespace.
 
         \item[-] \textbf{Description:} A description of the publisher.
 
-        \item[-] \textbf{Brand Artifacts:} Data directory CIDs for a set of off-chain artifacts that make up the profiles brand identity.
+        \item[-] \textbf{Brand artifacts:} Data directory CIDs for a set of off-chain artifacts that make up the profile brand identity.
 
-        \item[-] \textbf{Verification Status:} Whether the implied identity of the publisher profile matches the actor who is in control of the membership.
+        \item[-] \textbf{Verification status:} Whether the implied identity of the publisher profile matches the actor who is in control of the membership.
 
     \end{itemize}
 \end{concept_box}
 
 \subsection{Content}
 
-There is a base set of properties for all content on the platform, which includes
+There is a base set of properties for all content on the platform, which includes the following:
 
 \begin{itemize}
 
-    \item[-] \textbf{Category:} The type of content
+    \item[-] \textbf{Category:} The type of content.
 
     \item[-] \textbf{Payload:} Data directory identifiers for media and metadata.
 
-    \item[-] \textbf{Owner:} A publisher or content project (see section \ref{sec:content_finance}) who has control over the content, and has rights to value.
+    \item[-] \textbf{Owner:} A publisher or content project planner (see section \ref{sec:content_finance}) who has control over the content and rights to value.
 
-    \item[-] \textbf{Monetization Policy:} How end users must pay to access content, among which being free (with or without advertising), transactional or subscriber access (only subscribers have access).
+    \item[-] \textbf{Monetization policy:} How end users must pay to access content, among which are being free (with or without advertising), transactional, or subscriber access (only subscribers have access).
 
-    \item[-] \textbf{Dispute Status:} Whether some dispute is currently ongoing. This has implications for how end users should engage with the content.
+    \item[-] \textbf{Dispute status:} Whether some dispute is currently ongoing. This has implications for how end users should engage with the content.
 
 \end{itemize}
 
-There are a fixed set of primary content categories supported at any given time. Each category defines a particular schema for how to define key properties, including
+There are a fixed set of primary content categories that are supported at any given time. Each category defines a particular schema for how to define key properties, including
 
 \begin{itemize}
 
-    \item[-] \textbf{Payload Format:} How to organize the media payload
+    \item[-] \textbf{Payload format:} How to organize the media payload.
 
-    \item[-] \textbf{Rendering:} Metadata about how to play back or render media
+    \item[-] \textbf{Rendering:} Metadata about how to play back or render media.
 
-    \item[-] \textbf{Accessibility Resources:} things that assist a variety of users in consuming the content, such as subtitles or translation metadata, dubbing information, etc.
+    \item[-] \textbf{Accessibility resources:} Things that assist a variety of users in consuming the content, such as subtitles or translation metadata, dubbing information, etc.
 
-    \item[-] \textbf{Attribution:} Who did what in the process of producing the content.
+    \item[-] \textbf{Attribution:} Defines who did what in the process of producing the content.
 
 \end{itemize}
 
-Content will also have associated social information around engagement, such as view/access rates and counts, likes and a comment feed.
+Content will also have associated social information around engagement, such as view/access rates and counts, likes, and a comment feed.
 
 \subsection{Disputes}
 
-Any member can submit a dispute about any published content, and these disputes are processed by the working group. There will be a range of different dispute forms, some with the goal of entirely removing content, others with changing attribution or ownership information, and as a result redirecting revenue streams.
+Any member can submit a dispute about any published content, and these disputes are processed by the working group. There will be a range of different dispute forms, some with the goal of entirely removing content while others with changing attribution or ownership information and, as a result, redirect revenue streams.
 
 %\subsection{Content Filtering}
 %\textcolor{red}{TBD.}
@@ -1063,158 +1061,158 @@ All group members are paid fixed amounts per unit of time.
 \section{Discovery}
 
 \subsection{Overview}
-In order for end users to effectively discover relevant content in the content directory, access to the directory is required, and the ability to execute effective processing heuristics across this data set promptly. In order to alleviate the resulting processing and bandwidth costs this would impose, there is a designated set of discover nodes which provides these services.
+In order for end users to effectively discover relevant content in the content directory, access to the directory is required, and the ability to execute effective processing heuristics across this data needs to be set promptly. In order to alleviate the resulting processing and bandwidth costs, this will impose there is a designated set of discover nodes that provides these services.
 
-\subsection{Working Group}
+\subsection{Working group}
 
-The working group is made up off members which all run nodes that run a discovery provider service, described in the next section.
+The working group is composed of members that run nodes running a discovery provider service, as described in the next section.
 
 \subsection{Services}
 
 There are three types of discover services that are offered by discovery provider nodes
 
 \begin{enumerate}
-    \item[-] \textbf{Search:} Keyword and filter based ranked lists of content.
-    \item[-] \textbf{Browsing:} Category and filter based ranked lists of content.
-    \item[-] \textbf{Recommendations:} Content identifier based ranked lists of content.
+    \item[-] \textbf{Search:} Keyword and filter-based ranked lists of content.
+    \item[-] \textbf{Browsing:} Category and filter-based ranked lists of content.
+    \item[-] \textbf{Recommendations:} Content identifier-based ranked lists of content.
 \end{enumerate}
 
-In all cases three cases, the response provided by a service provider includes the relevant content, as well as Merkle proofs which allows the client to authenticate the integrity of the response. If required one can extend this to have automated slashing based on bad proofs sent to clients. There is no way to prove omission in this scheme, there will not be a well defined definition of what that would mean, as different discovery providers are free to pursue their own ranking and discovery policy. Reasonable incentives for good behavior can be generated by having user clients keep local statistics about the success rate of various providers, by measuring user behavior, which would drive more traffic to better providers. Likewise, the incentive to generate more traffic can be generated by giving a provider the privilege of displaying some in place advertisement which is not hooked into the normal advertising ecosystem. The inclusion of minimal telemetry feedback to providers can also help providers guide the development of their own discovery policies.
+In all three cases, the response provided by a service provider includes the relevant content as well as Merkle proofs, which allows the client to authenticate the integrity of the response. If required, one can extend this to have automated slashing based on bad proofs sent to clients. There is no way to prove omission in this scheme. There will not be a well-defined definition of what this may imply, as different discovery providers are free to pursue their own ranking and discovery policy. Reasonable incentives for good behavior can be generated by encouraging user clients to keep local statistics about the success rate of various providers or by measuring user behavior, which will in turn drive more traffic to better providers. Likewise, the incentive to generate more traffic can be generated by giving a provider the privilege of displaying in-place advertisement, which is not hooked into the normal advertising ecosystem. The inclusion of minimal telemetry feedback to providers can also help them guide the development of their own discovery policies.
 
 \subsection{Rewards}
 
 Beyond the incentive described in the prior section, all providers are given a fixed token reward per unit of time.
 
-\section{Software Development}
+\section{Software development}
 
 \subsection{Overview}
 
-Software development should be understood broadly, encompassing all activities surrounding research, production and testing of standards (e.g. analogous to BIPs or EIPs), protocols, algorithms, source code, binaries and other digital software assets, as well as deploying such outputs into production environments. Three aspects of this activity are of importance to the platform.
+Software development needs to be understood broadly, encompassing all activities surrounding research, production and testing of standards (e.g. analogous to BIPs or EIPs), protocols, algorithms, source code, binaries and other digital software assets, as well as deploying such outputs into production environments. Three aspects of this activity are of importance to the platform.
 
 \subsubsection{Financing}
 
-Many protocols suffer from the lack of an endogenous financing mechanism, and stateless protocols cannot have them by definition. Even in many stateful protocols, key contributors end up either severly underfunded, which is detrimental to quality and development progress, or they rely on third party revenue sources which do not have incentives that are guided by the interests of all protocol stakeholders.
+Many protocols suffer from the lack of an endogenous financing mechanism, and stateless protocols cannot have them by definition. Even in many stateful protocols, key contributors end up either severly underfunded, which is detrimental to quality and development progress, or  relying on third-party revenue sources that do not have incentives that are guided by the interests of all protocol stakeholders.
 
-To address this, the platform has a dedicate working group of contributors who are rewarded for providing these sorts of services, and which are accountable to stakeholders through the governance process.
+To address this, the platform has a dedicated working group of contributors who are rewarded for providing these sorts of services and are accountable to stakeholders through the governance process.
 
 \subsubsection{Development}
 
-For a variety of reasons, most software development projects for open stateful protocols end up with an equilibrum where the development process is organized around a canonical collaborative state. By collaborative state we mean some sort of code base and social collaboration metadata about that code base. For example, the state may often be a Git repository, and the collaboration metadata may be repository hosting service of some kind, or it could be a curated mailing list of patches and discussion. Ultimately, some social consensus process emerges for how changes to this state is made, and almost invariably, this process becomes a source of market power, its integrity becomes a security risk, and it is not formally accountable to protocol stakeholders. Socially desirable changes may be rejected, or adopted too slowly, and changes which are undesirable may be adopted. While fork based exit is in principle an option, it is also costly. This results in the following specific requirements.
+For a variety of reasons, most software development projects for open stateful protocols end up with an equilibrum where the development process is organized around a canonical collaborative state. By collaborative state, we mean some sort of code base and social collaboration metadata about that code base. For example, the state may often be a Git repository, and the collaboration metadata may be repository hosting service of some kind, or it can be a curated mailing list of patches and discussion. Ultimately, some social consensus process emerges for how changes to this state is made and, almost invariably, this process becomes a source of market power, its integrity becoming a security risk, and is not formally accountable to protocol stakeholders. Socially desirable changes may be rejected or adopted too slowly, and changes that are undesirable may be adopted. While fork based exit is in principle an option, it is also expensive. This results in the following specific requirements:
 
 \begin{enumerate}
 
-    \item[-] \textit{Accountable Canonicity}
+    \item[-] \textit{Accountable canonicity}
 
     The platform provides the means by which everyone securely resolves the same collaborative state at all times.
 
-    \item[-] \textit{Open Contributions}
+    \item[-] \textit{Open contributions}
 
     Any member should be able to submit a proposal for changes.
 
-    \item[-] \textit{Direct Control}
+    \item[-] \textit{Direct control}
 
     The governance process may directly mutate the state at any time.
 
-    \item[-] \textit{Gated Updating and Moderation}
+    \item[-] \textit{Gated updating and moderation}
 
     Designated role(s) occupied by a dynamic actor set, subject to governance, have the right to accept contributions or make changes on an ongoing basis.
 
-    \item[-] \textit{Immutable and Secure Updating History}
+    \item[-] \textit{Immutable and secure updating history}
 
-    An immutable history of all state changes. Even a Git repository only gives a history of states, but is devoid of secure information about whether a given commit was introduced by someone who had the right to do so. Merge commits are in this respect particularly sensitive, as this is typically the way new changes make their way into production source snapshots. Moreover, Git does not include the broader collaborative state.
+    An immutable history of all state changes. Even a Git repository only gives a history of states, but is devoid of secure information about whether a given commit was introduced by someone who had the right to do so. Merged commits are in this respect particularly sensitive, as this is typically the way new changes make their way into producing source snapshots. Moreover, Git does not include the broader collaborative state.
 
-    \item[-] \textit{Robust Availability Guarantees}
+    \item[-] \textit{Robust availability guarantees}
 
     The highest level of guarantee is required around the actual availability of state.
 
 \end{enumerate}
 
-Given this set of requirements, the platform maintains a set of on chain Git repositories which include familiar functionality, such a pull requests, merging, issue tracking, permissions and publishing releases and test/CI results. Critical changes, like merging, are done in consensus using ATP.
+Given this set of requirements, the platform maintains a set of on-chain Git repositories, which include familiar functionality, such-a-pull requests, merging, issue tracking, permissions, and publishing releases and test/CI results. Critical changes such as merging are conducted in consensus using ATP.
 
 \subsubsection{Deployment}
 
-Deployment is the process of converting a set of source assets into final production assets, like binaries, and distributing these securely, and possibly automatically, to end users. This requires the following.
+Deployment is the process of converting a set of source assets into final production assets, like binaries, and distributing these securely, and possibly automatically, to end users. This requires the following:
 
 \begin{enumerate}
 
-    \item[-] \textit{Build Authentication}
+    \item[-] \textit{Build authentication}
 
-    Given a commitment to a set of source assets, there must be a reliable, reproducible and secure way for anyone to determine that a particular set of production assets are the correct output of this process.
+    Given a commitment to a set of source assets, there must be a reliable, reproducible, and secure way for anyone to determine whether a particular set of production assets are the correct output of this process.
 
-    \item[-] \textit{Secure Updates}
+    \item[-] \textit{Secure updates}
 
-    There must be secure way for users to acquire, or run, new versions of software binaries.
+    There must be secure way for users to acquire or run new versions of software binaries.
 
 \end{enumerate}
 
-Given this set of requirements, a there is a set of standards for defining and conducting deterministic builds, and software updates happen directly from the platform state.
+Given this set of requirements, there is a set of standards for defining and conducting deterministic builds. Software updates occur directly from the platform state.
 
-\subsection{Working Group}
+\subsection{Working group}
 
-There are two group types, lead and contributor. The lead is responsible for creating and assigning permissions on projects to contributors, in order to allow them to perform write operations directly. While anyone can in principle contribute effort to development, only contributors have a recurring reward for their involvement. The working group also has its own messaging channel.
+There are two group types: lead and contributor. The lead is responsible for creating and assigning permissions on projects to contributors in order to help them perform write operations directly. While anyone can in principle contribute through their  effort to development, only contributors have a recurring reward for their involvement. The working group also has its own messaging channel.
 
 \subsection{Project}
 
-A project is the following set of items stored on chain
+A project is the following set of items stored on chain:
 
 \begin{enumerate}
-    \item Git repository
-    \item Permissions for who, in the working group, is allowed to make write operations, i.e. push to and merge into it.
-    \item A set of open issues and pull requests, with a corresponding discussion thread
-    \item A set of releases associated with tagged commits
+    \item Git repository.
+    \item Permissions for who, in the working group, is allowed to make write operations, i.e., push and merge into it.
+    \item A set of open issues and pull requests with a corresponding discussion thread.
+    \item A set of releases associated with tagged commits.
 \end{enumerate}
 
-The normal write operations in Git repositories, such as initialization, pushing, merging and tagging, are all fully secured by the platform itself, by having the Git processing rules embedded in consensus itself. Opening issues and pull requests is open to any platform member, but only a working group member with suitable permissions can actually moderate issues or merge requests, respectively.
+The normal write operations in Git repositories, such as initialization, pushing, merging, and tagging, are fully secured by the platform itself by having the Git processing rules embedded in the consensus itself. Opening issues and pull requests are open to any platform member, but only a working group member with suitable permissions can actually moderate issues or merge requests.
 
-\subsection{Artifacts, Reproducible and Releases}
+\subsection{Artifacts, reproducible, and releases}
 
-An artifact is a file is the result of some processing of the source material in a project repo commit. This processing may be things like a building, linking and packaging. There is a format for how to describe such processes, and they will always yield fully deterministic outputs. These processes happen entirely off chain, however the determinism about the outputs is critical in order to facilitate reliable coordination around the results, in particular around the validity of hash commitments of the artifacts. The most important process is the build process, where this determinism provides reproducible builds. A release is simply publication of a set of artifacts corresponding to a tagged commit. This can only be done by the group lead, and if the proposed hash commitments turn out to be fraudulent, then they can be challenged through a proposal by anyone. If found to be a correct challenge, then the lead will face sanctions, and challenger gets reward.
-
-%\textcolor{red}{ TBD: Specific format later, R\&D being done.}
-
-\subsection{Automated Testing}
-
-There is a format for describing how to run tests off-chain, and the presence of tests metadata will prevent pull requests from going through unless the group lead signs off on them suitably passing. Just like in the release process, such sign offs can be challenged.
+An artifact is a file that is the result of some processing of the source material in a project repo commit. This processing may involve processes such as building, linking, and packaging. There is a format to describe such processes, and these will always yield fully deterministic outputs. These processes occur entirely off chain; however, the determinism about the outputs is critical in order to facilitate reliable coordination around the results, in particular around the validity of hash commitments of the artifacts. The most important process is the building process, where this determinism provides reproducible builds. A release is a simple publication of a set of artifacts corresponding to a tagged commit. This can only be done by the group lead and, if the proposed hash commitments turn out to be fraudulent, then they can be challenged through a proposal by anyone. If found to be a correct challenge, then the lead will face sanctions and the challenger will get reward.
 
 %\textcolor{red}{ TBD: Specific format later, R\&D being done.}
 
-\subsection{Deployment and Upgradeability}
+\subsection{Automated testing}
 
-There are two types of deployments on the platform. Light deployments simply involve updating the platform state to reflect that a new version of some application is available, whether it is backwards compatible - and thus optional, and how to retrieve the application itself.
+There is a format for describing how to run tests off chain. The presence of tests' metadata prevents pull requests from going through unless the group lead signs on them as suitably passing. Just like in the release process, such sign offs can be challenged.
 
-The other type of deployment is heavy deployment, and it also involves some sort of change to the consensus as well. This change does not involve simply changing some platform parameter value, but rather to make an exogenous change to the platform state or processing logic itself. Such a deployment may be just a set of consensus changes which support change in the behavior of a single application, or it may be change in the platform which requires a concerted upgrade to a number of different applications simultaneously.
+%\textcolor{red}{ TBD: Specific format later, R\&D being done.}
 
-Both types of deployments are triggered by having the group lead submit a proposal based on a release. When it is accepted by the council, the application artifacts are replicated to storage and distribution infrastructure from the group lead. Installations on consumer devices to automatically and securely update by first consulting the chain to detect the deployment, and then connecting to the distribution infrastructure to fetch the payload.
+\subsection{Deployment and upgradeability}
+
+There are two types of deployments on the platform. Light deployments simply involve updating the platform state to reflect a new version of some application is available, whether it is backward compatible, and thus optional, and how to retrieve the application itself.
+
+The other type of deployment is heavy deployment and also involves some sort of change to the consensus as well. This change does not involve simply changing some platform parameter value, but rather making an exogenous change to the platform state or processing logic itself. Such a deployment may be just a set of consensus changes that support change in the behavior of a single application or a change in the platform that requires a concerted upgrade to a number of different applications simultaneously.
+
+Both types of deployments are triggered when the group lead submit a proposal based on a release. When this proposal is accepted by the council, the application artifacts are replicated to storage and distribution infrastructure from the group lead. Installations on consumer devices to automatically and securely update are conducted by first consulting the chain to detect the deployment and then connecting to the distribution infrastructure to fetch the payload.
 
 %\textcolor{red}{TBD: [Specific format later, depends on Tendermint vs Substrate decision also, R\&D being done.]}
 
-\section{Content Finance} \label{sec:content_finance}
+\section{Content finance} \label{sec:content_finance}
 
-The platform has a built in ecosystem and tools for creators to finance the production of new works through flexible crowd funding which gives backers a stake through a project specific token. This stake gives the right to engage in governance over the project, a possible share of revenue generated by produced assets, and possibly the option to trade assets in a market on the platform.
+The platform has a built-in ecosystem and tools for creators to finance the production of new works through flexible crowd funding, which gives backers a stake through a project-specific token. This stake gives the right to engage in governance over the project, a possible share of revenue generated by produced assets, and possibly the option to trade assets in a market on the platform.
 
-\subsection{Working Group}
+\subsection{Working group}
 
 All working group members, including the lead, have the same two sets of responsibilities
 
 \begin{itemize}
  \item[-] \textbf{Curation:} Curating the project pool for abusive or non-compliant proposals.
- \item[-] \textbf{Arbitration:} Arbitrating disputes in project, where the primary sanctions would be in the form of banning, redirecting project funds and slashing organizer stake.
+ \item[-] \textbf{Arbitration:} Arbitrating disputes in project, where the primary sanctions would be in the form of banning, redirecting project funds, and slashing organizer stake.
 \end{itemize}
 
-\subsection{Project Life Cycle}
+\subsection{Project life cycle}
 
 A project is initially created by the prospective project organizer, and this step involves specifying
 
 \begin{itemize}
-    \item[-] \textbf{Description:} Text, visual and other assets used for description of project.
+    \item[-] \textbf{Description:} Text, visual, and other assets used for the description of the project.
     \item[-] \textbf{Assets and terms:} What final productive assets will be produced, and what claims, if any, do backers have on different assets in terms of use and reward.
     \item[-] \textbf{Funding:} A description of the funding model of the project, including
 
         \begin{itemize}
             \item[(a)] How much is being raised, minimum and maximum
-            \item[(b)] When sale begins, and how long it will last.
+            \item[(b)] When do the sales begin and how long do they last.
             \item[(c)] How much of the total project stake is up.
-            \item[(d)] What jurisdictions are allowed to participate in funding
+            \item[(d)] What jurisdictions are allowed to participate in funding.
         \end{itemize}
 
     \item[-] \textbf{Token:} A description of the project token, including
@@ -1234,48 +1232,48 @@ A project is initially created by the prospective project organizer, and this st
 The project itself goes through the following states after being submitted:
 
 \begin{itemize}
-    \item[-] \textbf{Review:} Here it will be reviewed to see if it is acceptable within the policy of the platform at the time.
+    \item[-] \textbf{Review:} Here, it will be reviewed to see if it is acceptable within the policy of the platform at the time.
     \item[-] \textbf{Open:} The project becomes visible to the public, and corresponding communication channels become available, namely a messaging room and a messaging forum.
     \item[-] \textbf{Funding:} Backers can send funds to the project.
-    \item[-] \textbf{Production:} The raised funds are deployed to create project assets, with the organizer and backers collaborating through a governance process. In particular the funding may be released based on milestones.
-    \item[-] \textbf{Active:} Productive assets are finalized, and are distributed through the platform, and possibly third party platforms also. Any revenue generated by assets distributed on the platform directly will automatically pay out claimants based on given term, possibly subject to governance. Any revenue generated on external platforms must be documented and submitted to the project by the organizer. Failure to do so will trigger a dispute, and possible sanctions, with the arbitrator.
-    \item[-] \textbf{Terminated:} Project over, in that backers have no further active influence or claims. The terms will describe when, or if, this can occur.
+    \item[-] \textbf{Production:} The raised funds are deployed to create project assets, with the organizer and backers collaborating through a governance process. In particular, the funding may be released based on milestones.
+    \item[-] \textbf{Active:} Productive assets are finalized and distributed through the platform and possibly third-party platforms also. Any revenue generated by assets distributed on the platform directly will automatically pay out claimants based on the given term, possibly subject to governance. Any revenue generated on external platforms must be documented and submitted to the project by the organizer. Failure to do so will trigger a dispute, and possible sanctions, with the arbitrator.
+    \item[-] \textbf{Terminated:} The project is over in that backers have no further active influence or claims. The terms will describe when, or if, this can occur.
 \end{itemize}
 
 \section{Advertising} \label{sec:advertising}
 
-The platform has a built in advertising targeting, auction and delivery system. It allows advertisers to reach audiences through a competitive bidding process for display time across a variety of surfaces in consumer facing experiences. A core premise for a well functioning advertising ecosystem is that a substantial number of non-Sybil users are accessing the platform through a well behaved reference client.
+The platform has a built-in advertising targeting, auction, and delivery system. It allows advertisers to reach audiences through a competitive bidding process for display time across a variety of surfaces in consumer-facing experiences. A core premise for a well functioning advertising ecosystem is that a substantial number of non-Sybil users are accessing the platform through a well-behaved reference client.
 
-\subsection{Working Group}
+\subsection{Working group}
 
-The advertising working group just has a single member, which is the lead, referred to as the advertising authority. This role is responsible for running nodes that assist end users in fetching the correct advertising campaigns from the auction system, and also settling the state of campaigns upon completion or termination, while keeping display information off the chain.
+The advertising working group just has a single member, which is the lead, referred to as the advertising authority. This role is responsible for running nodes that assist end users in fetching the correct advertising campaigns from the auction system, and also settling the state of campaigns upon completion or termination, while keeping the display information off the chain.
 
 % FIXME Important to not hold on to data, if leaked, the signatures which validate the authenticity of the data include
 
-\subsection{Surfaces and Targeting}
+\subsection{Surfaces and targeting}
 
-At any given time there is a fixed set of such surfaces available, each with its own set of display, interaction and targeting constraints. A separate advertising auction is maintained for each surface, where access allocated to the highest cost per impression bid currently available.
-There are two families of targeting parameters, audience and session parameters. Audience parameters are those which allow one to target consumers based on individual characteristics, such as age interval, gender, location, language, consumption history, wallet balance, etc. This information does not go on the chain in clear text, but some of it may be stored in the membership settings object in encrypted form. Session parameters are those which are specifics to the context in which the surface is being displayed, so this things identifying media being viewed or searched for, or category being browsed, etc.
+At any given time, there is a fixed set of such surfaces available, each with its own set of display, interaction, and targeting constraints. A separate advertising auction is maintained for each surface, where access allocated to the highest cost per impression bid is currently available.
+There are two families of targeting parameters, audience, and session parameters. Audience parameters are those that allow one to target consumers based on individual characteristics, such as age interval, gender, location, language, consumption history, wallet balance, etc. This information does not go on the chain in clear text, but some of it may be stored in the membership settings' object in encrypted form. Session parameters are those that are specific to the context in which the surface is being displayed, thus identifying media being viewed or searched for, or category being browsed, etc.
 
-While all surfaces can target based on audience parameters, the type of session parameters available depends on the surface in question.
+While all surfaces can target based on audience parameters, the type of session parameter available depends on the surface in question.
 
-Targeting values will be shared with advertising authority, in order to both select the correct ad, and also provide confirmation of viewed ads back to the authority, but this viewing information is never published on the chain.
+Targeting values will be shared with advertising authority to both select the correct ad and also provide confirmation of viewed ads back to the authority; however, this viewing information is never published on the chain.
 
 \subsection{Campaigns}
 
 A campaign is a bid to occupy a certain surface, subject to a particular set of targeting parameters, at a particular price per impression. Specifically, it includes
 
 \begin{itemize}
- \item Advertiser identification
+ \item Advertiser identification.
  \item Advertising payload matching constraints of given surface. % FIXME . Some lives offchaining your own server?
- \item Targeting parameter values matching constraints of given surface
- \item Expiry time
- \item Maximum number of impressions
- \item Price per impression
- \item Funds covering maximum expenditure
+ \item Targeting parameter values matching constraints of the given surface.
+ \item Expiry time.
+ \item Maximum number of impressions.
+ \item Price per impression.
+ \item Funds covering maximum expenditure.
 \end{itemize}
 
-Once a campaign has been submitted, it lives in pool of campaigns for the given surface until all the funds have been spent, it is canceled by the advertiser or it is canceled by the platform.
+Once a campaign has been submitted, it lives in a pool of campaigns for the given surface until all the funds have been spent; it is then canceled by the advertiser or the platform.
 
 \subsection{Delivery}
 
@@ -1287,21 +1285,21 @@ Once a campaign has been submitted, it lives in pool of campaigns for the given 
 % c) some mechamism by which the distributor can resolve which ad to insert
 %    based on the downloader ID.
 
-A given advertising surface has a display policy which prescribes when an end user should repopulate an interface (new) content. The following informal describes the steps involved in this process, involving a user, advertising authority and advertising server.
+A given advertising surface has a display policy that prescribes when an end user should repopulate an interface (new) content. The following informally describes the steps involved in this process, including a user, an advertising authority, and an advertising server.
 
 \begin{itemize}
- \item The user sends signed session and audience targeting values to advertising authority
- \item The advertising authority filters campaign pool for given surface based on targeting values, and returns the highest bidding match, with corresponding Merkle inclusion proofs of campaign payload.
- \item The user fetches ad from advertising server , and receives receipts token in response.
- \item The user sends a receipts including this token, the campaign identifier and own key to the advertising authority.
+ \item The user sends the signed session and the audience targeting values to the advertising authority.
+ \item The advertising authority filters the campaign pool for the given surface based on targeting values and returns the highest bidding match, with corresponding Merkle inclusion proofs of campaign payload.
+ \item The user fetches the ad from advertising server and receivesthe  receipt token in response.
+ \item The user sends a receipt including this token, the campaign identifier, and their own key to the advertising authority.
  \item The user renders advertisement.
 \end{itemize}
 
-When advertising authority detects that a campaign has been displayed enough to exhaust the funds locked up, it submits a proof of this to the platform. The proof also includes information about how many impressions are derived from surfaces that are tied to publisher content, and what content was actually shown. This proof is made up of all the receipts from the users that have fetched the given ad. It is compressed, using the ZkSNARK primitive \cite{ben2014succinct}, where the user keys are kept as private inputs. This proof can also enforce limits on how many times any given user can at most have submitted a receipt for a given ad, preventing trivial abuse from a single member. The chain automatically validates the proof, and settles the given campaign by burning the funds. The advertiser can cancel the campaign using an analogous process. These proofs are further combined to create proofs about the total amount of advertising revenue a publisher has a claim on over a given period of time.
+When an advertising authority detects that a campaign has been displayed enough to exhaust the funds locked up, it submits a proof of this to the platform, which also includes information about how many impressions have been derived from surfaces that are tied to publisher content and what content has actually been shown. This proof is made up of all the receipts from the users that have fetched the given ad. It is compressed using the ZkSNARK primitive \cite{ben2014succinct}, where the user keys are kept as private inputs. This proof can also enforce limits on how many times any given user can at most have submitted a receipt for a given ad, preventing trivial abuse from a single member. The chain automatically validates the proof and settles the given campaign by burning the funds. The advertiser can cancel the campaign using an analogous process. These proofs are further combined to create proofs about the total amount of advertising revenues a publisher has a claim over a given period of time.
 
 \subsection{Rewards}
 
-The advertising authority receives a payment with two component, a fixed per unit of time payout, and a payout scaled by proportion of campaign settlements for which proofs are actually submitted. Publishers receive a payout from advertising, not in the traditional staking based reward, but an unconditional value transfer per unit of time. This amount is set to be a given fraction of the total revenue that is driven through surfaces displaying content tied to their content.
+The advertising authority receives a payment with two components: a fixed per unit of time payout and a payout scaled by proportion of campaign settlements for which proofs are actually submitted. Publishers receive a payout from the advertising, not in the traditional staking-based reward, but an unconditional value transfer per unit of time. This amount is set to be a given fraction of the total revenue being driven through surfaces displaying the content tied to their content.
 
 % TODO: Communications
 %\section{Communication}
@@ -1309,55 +1307,55 @@ The advertising authority receives a payment with two component, a fixed per uni
 
 \section{Miscellaneous}
 
-\subsection{Resolving Hosts}
+\subsection{Resolving hosts}
 
-Frequently one may need to resolve host nodes corresponding to an actor on the platform identified with a public key. The mapping between this key and the set of active host nodes under the control of the given actor is represented in a DHT. The actor registers mutable records of such hosts under a DHT key corresponding to the public key. When the set of active nodes changes, simply signing a new message reflecting this and storing it under the given key. There are many practical implementations of this pattern, for example IPNS or BEP44 in BitTorrent.
+Frequently, one may need to resolve host nodes corresponding to an actor on the platform identified with a public key. The mapping between this key and the set of active host nodes under the control of the given actor is represented in a DHT. The actor registers mutable records of such hosts under a DHT key corresponding to the public key. When the set of active nodes changes, simply sign a new message reflecting this and store it under the given key. There are many practical implementations of this pattern; for example, IPNS or BEP44 in BitTorrent.
 
 \section{Discussion} \label{sec:discussion}
 
-In this section various avenues of possible or required research and inquiry are explored.
+In this section, various avenues of possible or required research and inquiry are explored.
 
 \begin{itemize}
 
-    \item[-] \textit{Catastrophic Error Recovery}
+    \item[-] \textit{Catastrophic error recovery}
 
-    Given the rich on chain feature set of the platform, and the aspiration to do frequent on chain upgrades, the classical blockchain operations model of absolutely never having bugs in production, in perpetuity, may be too costly. Among other costs, this requirement may reduce the speed of improvement and encouraging a set of trusted developer gatekeepers. These costs are possibly dead weight for a protocol which is not intended to emphasize operational availability and integrity above all other objectives. As a result, it may be advisable to investigate various formal and informal protocols that may be relied upon to coordinate recovery among validators from some sort of consensus failure.
+    Given the rich-on-chain feature set of the platform and the aspiration to conduct frequent on-chain upgrades, the classical blockchain operations model of absolutely never having bugs in production, in perpetuity, may be too expensive. Among other costs, this requirement may reduce the speed of improvement and encourage a set of trusted developer gatekeepers. These costs are possibly dead weight for a protocol that does not intend on emphasizing operational availability and integrity above all other objectives. As a result, it may be advisable to investigate various formal and informal protocols that may be relied upon to coordinate recovery among validators from some sort of consensus failure.
 
     \item[-] \textit{BRAQ}
 
-    The currently describe model for BRAQ has at least two short comings.
+    The currently described model for BRAQ has at least two short comings.
 
-    Firstly, the presence of inevitably imperfect screening based membership introduction (see section \ref{sec:membership_curation}), the number of malicious BRAQ instances may silently grow over time. At some point, a concerted attack across such memberships could could make chain throughput unavailable for some period of time. If such an attack is timed to cover some sensitive time period, it may be that it can automatically cause slashing of a platform member. This problem could be ameliorated by having for example introducing sensible default transaction inclusion policies which favour non-BRAQ based transactions, or simply by including global limits on how many such transactions can be accepted at any given time, perhaps implemented as a BRAQ instance itself.
+    First, due to the presence of an inevitably imperfect screening-based membership introduction (see section \ref{sec:membership_curation}), the number of malicious BRAQ instances may silently grow over time. At some point, a concerted attack across such memberships can make chain throughput unavailable for some time. If such an attack is timed to cover some sensitive time period, it may  automatically cause slashing of a platform member. This problem can be ameliorated by, for example, introducing sensible default transaction inclusion policies that favour non-BRAQ-based transactions or simply by including global limits on how many such transactions can be accepted at any given time, perhaps being implemented as a BRAQ instance itself.
 
-    Secondly, the actual quota is not sensitive to payloads involved in actions, only the number of actions. This is not fit for a range of different purposes, and can easily be amended.
+    Second, the actual quota is not sensitive to payloads involved in actions, only the number of actions. This is not fit for a range of different purposes and can easily be amended.
 
     \item[-] \textit{ATP}
 
-    The obvious problem, and risk, in using ATP is how to come up with a safe time period for a given transaction, which may also depend on the payload. Moreover, its not entirely clear how a validator should treat the scenario where the processing is not finished, despite the time being up. The simplest approach is to consider it as any other node failure, like running out of resources, and simply stop the node.
+    The obvious problem and risk in using ATP is regarding coming up with a safe time period for a given transaction, which may also depend on the payload. Moreover, its not entirely clear how a validator must treat the scenario where the processing is not finished, despite the time being up. The simplest approach is to consider it as any other node failure, such as running out of resources, and simply stop the node.
 
-    There is also the opportunity of saving on processing resources by making the current proposal into a challenge response protocol. In this alternative approach, the final state can be proposed by anyone, subject to some bond, and this proposal can be challenged any anyone during a challenge period. In a challenge, all validators would actually do the normal ATP processing, and this way adjudicate the final dispute securely. A challenger found to be correct would win the bond.
+    There is also the opportunity of saving on processing resources by making the current proposal into a challenge response protocol. In this alternative approach, the final state can be proposed by anyone, subject to some bond, and this proposal can be challenged by anyone during a challenge period. In a challenge, all validators can actually conduct the normal ATP processing and, this way, adjudicate the final dispute securely. A challenger found to be correct will win the bond.
 
-    Another obvious alternative to the entire ATP approach are things like ZkSNARK \cite{ben2014succinct} and Truebit \cite{teutsch2017scalable}. However, this would impose severe practical limitations on what processing which would be in scope. For ZkSNARK it would be, at present, infeasible to generate proofs for just about all processing which would warrant ATP to begin with, by assumption. For both approaches one could almost never reuse existing implementations of the processing in question, even if it was in principle compatible with the approach specific computing model (e.g. WASM or register machine), which is also not always going to be the case.
+    Another obvious alternative to the entire ATP approach are things like ZkSNARK \cite{ben2014succinct} and Truebit \cite{teutsch2017scalable}. However, this would impose severe practical limitations on what processing which within scope. For ZkSNARK, it will be, at present, infeasible to generate proofs for just about all processing that can warrant ATP to begin with, by assumption. For both the approaches, one can almost never reuse the existing implementations of the processing in question, even if it is in principle compatible with the approach-specific computing model (e.g. WASM or register machine), which is also not always going to be the case.
 
     \item[-] \textit{Governance}
 
-    The current proposal for how governance and elections are organised is relatively naive to obvious problems around liveness, vote buying and validator censorship. This despite governance being at the heart of the capabilities of the platform, and the incentive compatibility of the protocol every other actor faces depends on how effective this process is. Most of the work in this proposal is about how to endow a, presumed effective, governance system with all the assets that would constitute a functional content platform. Further work on incorporating more mature ideas is needed going forward.
+    The current proposal for how governance and elections are organised is relatively naive to obvious problems around liveness, vote buying, and validator censorship. This despite governance being at the heart of the capabilities of the platform and the incentive compatibility of the protocol every other actor faces depends on how effective this process is. Most of the work in this proposal is about how to endow a presumed effective governance system with all the assets constituting a functional content platform. Further work on incorporating more mature ideas is needed.
 
-    \item[-] \textit{Screening and Suspension and Web 2.0 assets}
+    \item[-] \textit{Screening and suspension and seb 2.0 assets}
 
-    One of the biggest weaknesses of the current proposal is how feasible it may or may not be to manage the integrity of the memberships that are established through screening, in particular since it may be difficult to properly identify malicious attacks in production, and even if one could, the corresponding screening authority may no longer be bonded. The most obvious solution to this problem is to make a screening authority the owner of screened memberships, and disable them when the authority unbonds. Members could get rescreened with a new authority, using the old keys, in order to preserve their membership. This may coincidentally ameliorate one of the other primary limitations of the platform, due to the state of current infrastructure, which is the inability to properly own assets like domains and app store entries. An ecosystem of such screeners could own these assets, conduct their own screening procedure, and capture in the upside that the membership base they brings to the platform.
+    One of the biggest weaknesses of the current proposal is that it may or may not be feasibleto manage the integrity of the memberships that are established through screening, in particular since it may be difficult to properly identify malicious attacks in production and, even if one could, the corresponding screening authority may no longer be bonded. The most obvious solution to this problem is to make a screening authority the owner of screened memberships and disable them when the authority unbonds. Members could get rescreened with a new authority, using the old keys, in order to preserve their membership. This may coincidentally ameliorate one of the other primary limitations of the platform, due to the state of current infrastructure, which is the inability to properly own assets such as domains and app store entries. An ecosystem of such screeners can own these assets, conduct their own screening procedure, and capture in the upside the membership base they bring to the platform.
 
-    \item[-] \textit{Software Development}
+    \item[-] \textit{Software development}
 
-    Keeping this entire development process has resource costs, not primarily in throughput capacity, but state size. For example, a very mature large open source project may have a Git repository which occupies dozens of gigabytes in, primarily, commit object blobs. This is not a non-starter per say, but it clearly has costs which must be recognized. There are other approaches, such as OSCoin and the Radicle stack \cite{oscoin},  which aim to keep the entire process off chain, extend the git protocol to also incorporate the collaborative assets, and delegate consensus to a trusted set of actors. This does not satisfy all of the outlined requirements, and begs the question of how to make the consensus actors accountable to the platform, but has the benefit being cheaper on the platform blockchain.
+    Keeping this entire development process has resource costs, not primarily in throughput capacity but state size. For example, a very mature large open-source project may have a Git repository that occupies dozens of gigabytes in, primarily, commit object blobs. This is not a non-starter, per say, but clearly has costs that need to be recognized. There are other approaches, such as the OSCoin and the Radicle stack \cite{oscoin},  which aim to keep the entire process off chain, extend the Git protocol to also incorporate the collaborative assets, and delegate consensus to a trusted set of actors. This does not satisfy all the outlined requirements and begs the question of how to make the consensus actors accountable to the platform; however, it has the benefit of being cheaper on the platform blockchain.
 
-    Another issue which requires further work is how to safely update the platform in concert with user facing applications which make assumptions about how the platform functions at any given time. This is further complicated by the objective of wanting to use the platform itself as the infrastructure to do the application updates.
+    Another issue requiring further work is how to safely update the platform in concert with user facing applications that make assumptions about how the platform functions at any given point of time. This is further complicated by the objective of wanting to use the platform itself, as the infrastructure to do the application updates.
 
-    \item[-] \textit{Storage and Distribution}
+    \item[-] \textit{Storage and distribution}
 
-    The major problem in the current approach is that all user download events results in a set of transactions, and leaves a permanent public history of downloads. This is infeasible from both a capacity and privacy perspective. The alternative which is currently being explored is to offload these transactions into a separate chain with trust model based on fraud proofs, and governance to ensure availability, inspired by the Plasma framework \cite{poon2017plasma}. By committing blocks, and in particular state commitments, into the main blockchain, it becomes possible to make positive claims about the current state in the parallel chain at different times, such as the total amount of data a distributor has moved, or the total number of downloads for a particular data object. Expired or fraudulent states can be challenged in the same way, during an exit period. Privacy could be introduced by allowing members to use pseudonomous identifier in the parallel chain, which can be proven to match a main chain membership through an appropriate ZkSNARK. The disadvantage of this approach is the complexity and latency of main chain state changes. An alternative can be to dramatically change the trust model and rely on data being shared entirely out of band w.r.t. any shared public state, and then having a voting process based main chain update, based on this objective verifiable data.
+    The major problem in the current approach is that all user-downloaded events result in a set of transactions and leave a permanent public history of downloads. This is infeasible from both a capacity and privacy perspective. The alternative currently being explored involves offloading these transactions into a separate chain with trust model based on fraud proofs, and governance to ensure availability, inspired by the Plasma framework. \cite{poon2017plasma}. By committing blocks, and in particular state commitments, into the main blockchain, it becomes possible to make positive claims about the current state in the parallel chain at different times, such as the total amount of data a distributor has moved or the total number of downloads for a particular data object. Expired or fraudulent states can be challenged in the same way during an exit period. Privacy can be introduced by allowing members to use pseudonymous identifier in the parallel chain, which can be proven to match a main chain membership through an appropriate ZkSNARK. The disadvantage of this approach is the complexity and latency of main chain state changes. An alternative can be to dramatically change the trust model and rely on data being shared entirely out of band w.r.t. any shared public state, and then having a voting process-based main chain update based on this objective verifiable data.
 
-    A secondary objective is to replace full replication with erasure coding for each data object \cite{reed1960polynomial}, such that less total storage space is required for a given level of fault based unavailability risk. This makes the storage costs lower.
+    A secondary objective is to replace full replication with erasure coding for each data object \cite{reed1960polynomial} such that less total storage space is required for a given level of fault based on unavailability risk. This makes the storage costs lower.
 
 \end{itemize}
 
